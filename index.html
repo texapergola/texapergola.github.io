@@ -485,6 +485,10 @@
   });
 
 
+// Sanitize — убирает опасные символы
+  function sanitize(str) {
+    return str.replace(/[<>"'`;&|\\\/\(\)\{\}\[\]]/g, '').trim();
+  }
 
   function showErr(id, errId, show) {
     document.getElementById(id).classList.toggle('error', show);
@@ -496,38 +500,55 @@
     if (document.querySelector('input[name="_hp"]').value) return;
     let ok = true;
 
-    const fn = document.getElementById('firstName').value.trim();
-    const fnOk = fn.length >= 2 && /^[a-zA-Zа-яА-ЯёЁ\u00C0-\u024F'\- ]+$/.test(fn);
+    // Имя — только буквы, дефис, пробел, апостроф, 2-50 символов
+    const fn = sanitize(document.getElementById('firstName').value);
+    const fnOk = fn.length >= 2 && fn.length <= 50 && /^[a-zA-Zа-яА-ЯёЁ\u00C0-\u024F'\- ]+$/.test(fn);
     showErr('firstName','firstNameErr',!fnOk); if(!fnOk) ok=false;
 
-    const em = document.getElementById('email').value.trim();
-    const emOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em);
+    // Email — стандартный паттерн, максимум 100 символов
+    const em = sanitize(document.getElementById('email').value);
+    const emOk = em.length <= 100 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em);
     showErr('email','emailErr',!emOk); if(!emOk) ok=false;
 
-    const ph = document.getElementById('phone').value.replace(/\D/g,'');
-    showErr('phone','phoneErr',ph.length<10); if(ph.length<10) ok=false;
+    // Телефон — только цифры, скобки, дефис, пробел, минимум 10 цифр
+    const phRaw = document.getElementById('phone').value;
+    const ph = phRaw.replace(/\D/g,'');
+    showErr('phone','phoneErr', ph.length < 10 || ph.length > 11);
+    if(ph.length < 10 || ph.length > 11) ok=false;
 
-    const addr = document.getElementById('address').value.trim();
-    showErr('address','addressErr',addr.length<5); if(addr.length<5) ok=false;
+    // Адрес — буквы, цифры, запятая, точка, пробел, дефис, максимум 200
+    const addr = sanitize(document.getElementById('address').value);
+    const addrOk = addr.length >= 5 && addr.length <= 200 && /^[a-zA-Zа-яА-ЯёЁ0-9\s,.\-#]+$/.test(addr);
+    showErr('address','addressErr',!addrOk); if(!addrOk) ok=false;
+
+    // Сообщение — любой текст но без HTML/JS, максимум 1000 символов
+    const msg = sanitize(document.getElementById('message').value);
 
     if (!ok) return;
 
     const data = {
-      firstName: fn, lastName: document.getElementById('lastName').value.trim(),
-      email: em, phone: document.getElementById('phone').value, address: addr,
+      firstName: fn,
+      lastName:  sanitize(document.getElementById('lastName').value),
+      email:     em,
+      phone:     phRaw,
+      address:   addr,
       pergolaType: document.getElementById('pergolaType').value,
-      material: document.getElementById('material').value,
-      size: document.getElementById('size').value,
-      timeline: document.getElementById('timeline').value,
-      budget: document.getElementById('budget').value,
-      hoa: document.getElementById('hoa').value,
-      message: document.getElementById('message').value.trim(),
-      lang: lang, submittedAt: new Date().toISOString()
+      material:  document.getElementById('material').value,
+      size:      document.getElementById('size').value,
+      timeline:  document.getElementById('timeline').value,
+      budget:    document.getElementById('budget').value,
+      hoa:       document.getElementById('hoa').value,
+      message:   msg,
+      lang:      lang,
+      submittedAt: new Date().toISOString()
     };
 
-    fetch('https://hook.us2.make.com/pj242pv4y1ivcxkkvhtugkhbrxfp9ibk', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    fetch('https://hook.us2.make.com/pj242pv4y1ivcxkkvhtugkhbrxfp9ibk', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
 
-    console.log('Lead:', data);
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   });
