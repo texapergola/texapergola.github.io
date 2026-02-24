@@ -1050,8 +1050,7 @@
         submittedAt: new Date().toISOString()
       };
 
-      // TODO: Replace with your Make.com webhook URL
-      // fetch('YOUR_MAKE_WEBHOOK_URL', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) });
+      fetch('https://hook.us2.make.com/pj242pv4y1ivcxkkvhtugkhbrxfp9ibk', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) });
 
       console.log('Lead captured:', data);
 
