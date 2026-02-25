@@ -152,6 +152,18 @@
     footer { background:var(--dark); color:rgba(255,255,255,0.4); padding:40px 32px; text-align:center; font-size:13px; }
     footer strong { color:rgba(255,255,255,0.7); }
 
+    /* PORTFOLIO */
+    .portfolio { background: var(--cream); }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; }
+    .portfolio-card { background:#fff; border-radius:2px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); transition:all 0.3s; }
+    .portfolio-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
+    .portfolio-img { width:100%; height:220px; object-fit:cover; display:block; }
+    .portfolio-body { padding:24px; }
+    .portfolio-tag { display:inline-block; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; background:var(--sand); color:var(--wood); padding:3px 10px; border-radius:20px; margin-bottom:10px; font-weight:500; }
+    .portfolio-body h4 { font-family:'Playfair Display',serif; font-size:17px; margin-bottom:14px; line-height:1.3; }
+    .portfolio-specs { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .portfolio-specs span { font-size:13px; color:#666; line-height:1.5; }
+    .portfolio-price { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--terra); }
     @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
     @keyframes scrollLine { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
@@ -222,46 +234,147 @@
   <div class="container">
     <div class="section-tag"><span class="Li en on">What We Build</span><span class="Li ru">Что мы строим</span><span class="Li es">Lo Que Construimos</span></div>
     <h2 class="section-title"><span class="L en on">Pergola Solutions for Every Backyard</span><span class="L ru">Решения для любого двора</span><span class="L es">Soluciones para Cada Patio</span></h2>
-    <div class="services-grid">
+<div class="services-grid">
       <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Classic pergola" loading="lazy"/>
+        <img class="service-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?w=800&q=80" alt="Classic pergola" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">🏛️</div>
           <h3><span class="Li en on">Classic Pergolas</span><span class="Li ru">Классические перголы</span><span class="Li es">Pérgolas Clásicas</span></h3>
-          <p><span class="L en on">Timeless wood or aluminum structures that add shade and elegance to any outdoor space.</span><span class="L ru">Традиционные деревянные или алюминиевые конструкции, добавляющие тень и элегантность.</span><span class="L es">Estructuras clásicas de madera o aluminio que añaden sombra y elegancia a cualquier espacio exterior.</span></p>
+          <p><span class="L en on">Timeless wood or aluminum structures that add shade and elegance to any outdoor space.</span><span class="L ru">Традиционные деревянные или алюминиевые конструкции, добавляющие тень и элегантность.</span><span class="L es">Estructuras clásicas de madera o aluminio que añaden sombra y elegancia.</span></p>
         </div>
       </div>
       <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Attached pergola" loading="lazy"/>
+        <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?w=800&q=80" alt="Attached pergola" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">🌿</div>
           <h3><span class="Li en on">Attached Pergolas</span><span class="Li ru">Пристроенные перголы</span><span class="Li es">Pérgolas Adosadas</span></h3>
-          <p><span class="L en on">Seamlessly connected to your home, extending your living space into the outdoors.</span><span class="L ru">Плавно соединены с домом, расширяя жилое пространство на открытый воздух.</span><span class="L es">Conectadas perfectamente a su hogar, extendiendo su espacio habitable al exterior.</span></p>
+          <p><span class="L en on">Seamlessly connected to your home, extending your living space into the outdoors.</span><span class="L ru">Плавно соединены с домом, расширяя жилое пространство на открытый воздух.</span><span class="L es">Conectadas perfectamente a su hogar, extendiendo su espacio habitable.</span></p>
         </div>
       </div>
       <div class="service-card">
-        <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5cf94d891d021c00015c8f01/9f231937-e1c0-45f7-8638-0f875785c866/pratic_pergole_01_opera_scheda.jpg" alt="Louvered pergola" loading="lazy"/>
+        <img class="service-img" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80" alt="Louvered pergola" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">☀️</div>
           <h3><span class="Li en on">Louvered Pergolas</span><span class="Li ru">Жалюзийные перголы</span><span class="Li es">Pérgolas con Persianas</span></h3>
-          <p><span class="L en on">Adjustable roof slats for complete control over sun and rain — perfect for Texas weather.</span><span class="L ru">Регулируемые ламели для полного контроля над солнцем и дождём — идеально для Техаса.</span><span class="L es">Lamas ajustables para control total sobre el sol y la lluvia — perfectas para Texas.</span></p>
+          <p><span class="L en on">Adjustable roof slats for complete control over sun and rain — perfect for Texas weather.</span><span class="L ru">Регулируемые ламели для полного контроля над солнцем и дождём.</span><span class="L es">Lamas ajustables para control total sobre el sol y la lluvia.</span></p>
         </div>
       </div>
       <div class="service-card">
-        <img class="service-img" src="https://i.pinimg.com/736x/23/29/ea/2329ea3104ccf51fb6622a8200c04aaa.jpg" alt="Outdoor kitchen" loading="lazy"/>
+        <img class="service-img" src="https://images.unsplash.com/photo-1600210491892-03d54079b6ac?w=800&q=80" alt="Outdoor kitchen" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">🔥</div>
-          <h3><span class="Li en on">Outdoor Kitchens</span><span class="Li ru">Летние кухни</span><span class="Li es">Cocinas al Aire Libre</span></h3>
-          <p><span class="L en on">Pergola + outdoor kitchen combos that make your backyard the ultimate entertaining space.</span><span class="L ru">Пергола + летняя кухня — превратите двор в идеальное место для отдыха.</span><span class="L es">Combinaciones de pérgola + cocina exterior para el espacio de entretenimiento definitivo.</span></p>
-        </div>
-      </div>
-    </div>
+          <h3
   </div>
 </section>
 
 <!-- WHY -->
 <section class="why">
   <div class="container">
+    <!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-tag"><span class="Li en on">Our Work</span><span class="Li ru">Наши работы</span><span class="Li es">Nuestro Trabajo</span></div>
+    <h2 class="section-title"><span class="L en on">Real Projects, Real Prices</span><span class="L ru">Реальные проекты, реальные цены</span><span class="L es">Proyectos Reales, Precios Reales</span></h2>
+    <p class="section-sub" style="margin-bottom:48px">
+      <span class="L en on">Every project is unique. Prices below are for reference — your free estimate will reflect your specific site and requirements.</span>
+      <span class="L ru">Каждый проект уникален. Цены ниже — ориентировочные. Бесплатная оценка учтёт особенности вашего участка.</span>
+      <span class="L es">Cada proyecto es único. Los precios son orientativos — su presupuesto gratuito reflejará sus requisitos específicos.</span>
+    </p>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?w=800&q=80" alt="Classic pergola Cedar Park" loading="lazy"/>
+        <div class="portfolio-body">
+          <div class="portfolio-tag"><span class="Li en on">Pergola</span><span class="Li ru">Пергола</span><span class="Li es">Pérgola</span></div>
+          <h4><span class="Li en on">Classic Cedar Pergola — Cedar Park, TX</span><span class="Li ru">Классическая кедровая пергола — Cedar Park, TX</span><span class="Li es">Pérgola Clásica de Cedro — Cedar Park, TX</span></h4>
+          <div class="portfolio-specs">
+            <span>📐 <span class="Li en on">14×16 ft (224 sq ft)</span><span class="Li ru">14×16 фут (224 кв.фут)</span><span class="Li es">14×16 pies (224 pies²)</span></span>
+            <span>🪵 <span class="Li en on">Cedar wood, stained finish</span><span class="Li ru">Кедр, тонированная отделка</span><span class="Li es">Madera de cedro, acabado teñido</span></span>
+            <span>⏱ <span class="Li en on">3 days installation</span><span class="Li ru">3 дня монтаж</span><span class="Li es">3 días de instalación</span></span>
+            <span>ℹ️ <span class="Li en on">Freestanding, concrete footings, no HOA issues</span><span class="Li ru">Отдельностоящая, бетонные основания, HOA одобрено</span><span class="Li es">Independiente, cimientos de hormigón, sin problemas HOA</span></span>
+          </div>
+          <div class="portfolio-price">~$6,500</div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80" alt="Louvered pergola Austin" loading="lazy"/>
+        <div class="portfolio-body">
+          <div class="portfolio-tag"><span class="Li en on">Pergola</span><span class="Li ru">Пергола</span><span class="Li es">Pérgola</span></div>
+          <h4><span class="Li en on">Louvered Aluminum Pergola — Austin, TX</span><span class="Li ru">Жалюзийная алюминиевая пергола — Austin, TX</span><span class="Li es">Pérgola de Aluminio con Persianas — Austin, TX</span></h4>
+          <div class="portfolio-specs">
+            <span>📐 <span class="Li en on">12×20 ft (240 sq ft)</span><span class="Li ru">12×20 фут (240 кв.фут)</span><span class="Li es">12×20 pies (240 pies²)</span></span>
+            <span>🔩 <span class="Li en on">Powder-coated aluminum, motorized louvers</span><span class="Li ru">Алюминий с порошковым покрытием, моторизованные ламели</span><span class="Li es">Aluminio lacado, persianas motorizadas</span></span>
+            <span>⏱ <span class="Li en on">4 days installation</span><span class="Li ru">4 дня монтаж</span><span class="Li es">4 días de instalación</span></span>
+            <span>ℹ️ <span class="Li en on">Attached to house, integrated rain gutters</span><span class="Li ru">Пристроена к дому, встроенные водостоки</span><span class="Li es">Adosada a la casa, canalones integrados</span></span>
+          </div>
+          <div class="portfolio-price">~$14,800</div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1600210491892-03d54079b6ac?w=800&q=80" alt="Pergola outdoor kitchen Round Rock" loading="lazy"/>
+        <div class="portfolio-body">
+          <div class="portfolio-tag"><span class="Li en on">Pergola + Kitchen</span><span class="Li ru">Пергола + Кухня</span><span class="Li es">Pérgola + Cocina</span></div>
+          <h4><span class="Li en on">Pergola + Outdoor Kitchen — Round Rock, TX</span><span class="Li ru">Пергола + летняя кухня — Round Rock, TX</span><span class="Li es">Pérgola + Cocina Exterior — Round Rock, TX</span></h4>
+          <div class="portfolio-specs">
+            <span>📐 <span class="Li en on">16×20 ft pergola + 8 ft kitchen island</span><span class="Li ru">Пергола 16×20 фут + кухонный остров 8 фут</span><span class="Li es">Pérgola 16×20 pies + isla de cocina 8 pies</span></span>
+            <span>🔩 <span class="Li en on">Cedar pergola, stone kitchen counter, built-in grill</span><span class="Li ru">Кедровая пергола, каменная столешница, встроенный гриль</span><span class="Li es">Pérgola de cedro, encimera de piedra, parrilla integrada</span></span>
+            <span>⏱ <span class="Li en on">7 days installation</span><span class="Li ru">7 дней монтаж</span><span class="Li es">7 días de instalación</span></span>
+            <span>ℹ️ <span class="Li en on">Required HOA approval, obtained by client</span><span class="Li ru">Потребовалось одобрение HOA, получено клиентом</span><span class="Li es">Requirió aprobación HOA, obtenida por el cliente</span></span>
+          </div>
+          <div class="portfolio-price">~$28,000</div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80" alt="Wood deck Pflugerville" loading="lazy"/>
+        <div class="portfolio-body">
+          <div class="portfolio-tag"><span class="Li en on">Deck</span><span class="Li ru">Дека</span><span class="Li es">Deck</span></div>
+          <h4><span class="Li en on">Pressure-Treated Wood Deck — Pflugerville, TX</span><span class="Li ru">Дека из обработанного дерева — Pflugerville, TX</span><span class="Li es">Deck de Madera Tratada — Pflugerville, TX</span></h4>
+          <div class="portfolio-specs">
+            <span>📐 <span class="Li en on">12×18 ft (216 sq ft), ground level</span><span class="Li ru">12×18 фут (216 кв.фут), уровень земли</span><span class="Li es">12×18 pies (216 pies²), nivel del suelo</span></span>
+            <span>🪵 <span class="Li en on">Pressure-treated pine, natural stain</span><span class="Li ru">Сосна под давлением, натуральный тонер</span><span class="Li es">Pino tratado a presión, tinte natural</span></span>
+            <span>⏱ <span class="Li en on">3 days installation</span><span class="Li ru">3 дня монтаж</span><span class="Li es">3 días de instalación</span></span>
+            <span>ℹ️ <span class="Li en on">Built-in benches, no permit required at ground level</span><span class="Li ru">Встроенные скамейки, разрешение не требовалось</span><span class="Li es">Bancos integrados, sin permiso requerido a nivel del suelo</span></span>
+          </div>
+          <div class="portfolio-price">~$7,200</div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80" alt="Composite deck Lakeway" loading="lazy"/>
+        <div class="portfolio-body">
+          <div class="portfolio-tag"><span class="Li en on">Deck</span><span class="Li ru">Дека</span><span class="Li es">Deck</span></div>
+          <h4><span class="Li en on">Trex Composite Deck — Lakeway, TX</span><span class="Li ru">Композитная дека Trex — Lakeway, TX</span><span class="Li es">Deck Compuesto Trex — Lakeway, TX</span></h4>
+          <div class="portfolio-specs">
+            <span>📐 <span class="Li en on">14×22 ft (308 sq ft), elevated 4 ft</span><span class="Li ru">14×22 фут (308 кв.фут), высота 4 фута</span><span class="Li es">14×22 pies (308 pies²), elevado 4 pies</span></span>
+            <span>✨ <span class="Li en on">Trex Transcend, Rope Swing color, hidden fasteners</span><span class="Li ru">Trex Transcend, цвет Rope Swing, скрытые крепления</span><span class="Li es">Trex Transcend, color Rope Swing, sujetadores ocultos</span></span>
+            <span>⏱ <span class="Li en on">5 days installation</span><span class="Li ru">5 дней монтаж</span><span class="Li es">5 días de instalación</span></span>
+            <span>ℹ️ <span class="Li en on">Required city permit, obtained by our team</span><span class="Li ru">Потребовалось разрешение города, получено нашей командой</span><span class="Li es">Requirió permiso municipal, obtenido por nuestro equipo</span></span>
+          </div>
+          <div class="portfolio-price">~$16,500</div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="Deck pergola combo Austin" loading="lazy"/>
+        <div class="portfolio-body">
+          <div class="portfolio-tag"><span class="Li en on">Deck + Pergola</span><span class="Li ru">Дека + Пергола</span><span class="Li es">Deck + Pérgola</span></div>
+          <h4><span class="Li en on">Composite Deck + Attached Pergola — Austin, TX</span><span class="Li ru">Композитная дека + пристроенная пергола — Austin, TX</span><span class="Li es">Deck Compuesto + Pérgola Adosada — Austin, TX</span></h4>
+          <div class="portfolio-specs">
+            <span>📐 <span class="Li en on">16×24 ft deck + 16×12 ft pergola</span><span class="Li ru">Дека 16×24 фут + пергола 16×12 фут</span><span class="Li es">Deck 16×24 pies + pérgola 16×12 pies</span></span>
+            <span>✨ <span class="Li en on">Trex deck + cedar pergola with string lights</span><span class="Li ru">Дека Trex + кедровая пергола с гирляндами</span><span class="Li es">Deck Trex + pérgola de cedro con luces</span></span>
+            <span>⏱ <span class="Li en on">8 days installation</span><span class="Li ru">8 дней монтаж</span><span class="Li es">8 días de instalación</span></span>
+            <span>ℹ️ <span class="Li en on">HOA approved, city permit included</span><span class="Li ru">HOA одобрено, разрешение города включено</span><span class="Li es">HOA aprobado, permiso municipal incluido</span></span>
+          </div>
+          <div class="portfolio-price">~$24,000</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     <div class="why-grid">
       <div class="why-image"><img src="https://veteranspergolasandpatiocovers.com/wp-content/uploads/2025/09/Pergolas-Installer.jpg" alt="Craftsmanship"/></div>
       <div>
