@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TexaPergola — Custom Pergolas & Decks in Austin, TX</title>
   <meta name="description" content="Custom pergolas and decks built for Texas. Quality craftsmanship, free estimates, serving Austin and surrounding areas." />
+  <!-- Swiper.js pack -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z6Q3FZXBT"></script>
   <script>
@@ -68,7 +71,7 @@
     .stat-num { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:var(--accent); line-height:1; }
     .stat-label { font-size:12px; color:rgba(255,255,255,0.5); letter-spacing:0.1em; text-transform:uppercase; margin-top:6px; }
 
-    section { padding:96px 32px; }
+    section { padding:56px 32px; }
     .container { max-width:1100px; margin:0 auto; }
     .section-tag { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--terra); margin-bottom:12px; font-weight:500; }
     .section-title { font-family:'Playfair Display',serif; font-size:clamp(32px,4vw,52px); font-weight:700; line-height:1.15; margin-bottom:20px; }
@@ -76,7 +79,7 @@
 
     /* SERVICES */
     .services { background:var(--sand); }
-    .services-grid { display:grid; grid-template-columns:repeat(3, minmax(260px, 1fr)); gap:2px; margin-top:56px; }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2px; margin-top:56px; }
     .service-card { background:var(--cream); overflow:hidden; position:relative; transition:all 0.3s; }
     .service-card::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:3px; background:var(--terra); transform:scaleX(0); transform-origin:left; transition:transform 0.3s; }
     .service-card:hover::after { transform:scaleX(1); }
@@ -100,6 +103,25 @@
     .portfolio-specs { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
     .portfolio-specs span { font-size:13px; color:#666; line-height:1.5; }
     .portfolio-price { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--terra); }
+
+    /* CAROUSEL */
+    .carousel-section { background: var(--cream); padding: 96px 32px; }
+    .projectSwiper { width: 100%; height: 600px; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08); margin-top: 48px; }
+    .projectSwiper .swiper-slide { position: relative; }
+    .projectSwiper .swiper-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .projectSwiper .swiper-slide:hover img { transform: scale(1.05); }
+    .slide-content { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,18,8,0.9), rgba(26,18,8,0.3), transparent); color: #fff; padding: 40px 30px 25px; text-align: left; backdrop-filter: blur(2px); }
+    .slide-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 6px; line-height: 1.2; color: #fff; }
+    .slide-location { font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 8px; font-weight: 300; }
+    .slide-price { display: inline-block; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--accent); background: rgba(0,0,0,0.3); padding: 4px 16px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); }
+    .projectSwiper .swiper-button-next, .projectSwiper .swiper-button-prev { color: #fff; background: rgba(196,98,45,0.8); width: 48px; height: 48px; border-radius: 50%; transition: all 0.2s; backdrop-filter: blur(4px); }
+    .projectSwiper .swiper-button-next:after, .projectSwiper .swiper-button-prev:after { font-size: 20px; }
+    .projectSwiper .swiper-button-next:hover, .projectSwiper .swiper-button-prev:hover { background: var(--terra); transform: scale(1.1); }
+    .projectSwiper .swiper-pagination-bullet { width: 10px; height: 10px; background: #fff; opacity: 0.5; transition: all 0.2s; }
+    .projectSwiper .swiper-pagination-bullet-active { background: var(--terra); opacity: 1; width: 30px; border-radius: 5px; }
+    @media (max-width: 992px) { .projectSwiper { height: 500px; } .slide-title { font-size: 24px; } .slide-price { font-size: 20px; } }
+    @media (max-width: 768px) { .carousel-section { padding: 64px 16px; } .projectSwiper { height: 400px; } .slide-content { padding: 30px 20px 15px; } .slide-title { font-size: 20px; } .slide-location { font-size: 12px; } .slide-price { font-size: 18px; padding: 3px 12px; } .projectSwiper .swiper-button-next, .projectSwiper .swiper-button-prev { width: 36px; height: 36px; } .projectSwiper .swiper-button-next:after, .projectSwiper .swiper-button-prev:after { font-size: 16px; } }
+    @media (max-width: 480px) { .projectSwiper { height: 350px; } .slide-content { padding: 20px 15px 12px; } .slide-title { font-size: 18px; } }
 
     /* DECK REVIEW */
     .deck-review { background: var(--sand); }
@@ -233,7 +255,7 @@
     <div class="hero-tag">Austin, Texas</div>
     <h1>
       <span class="L en on">Custom Pergolas &amp; Decks<br/>Built for <em>Texas</em></span>
-      <span class="L ru">Перголы и деки на заказ<br/>для <em>Техаса</em></span>
+      <span class="L ru">Перголы и террасы на заказ<br/>для <em>Техаса</em></span>
       <span class="L es">Pérgolas y Decks Personalizados<br/>para <em>Texas</em></span>
     </h1>
     <p>
@@ -266,206 +288,329 @@
 </div>
 
 <!-- SERVICES -->
+<!-- PORTFOLIO -->
 <section class="services" id="services">
   <div class="container">
     <div class="section-tag"><span class="Li en on">What We Build</span><span class="Li ru">Что мы строим</span><span class="Li es">Lo Que Construimos</span></div>
-    <h2 class="section-title"><span class="L en on">Pergola &amp; Deck Solutions for Every Backyard</span><span class="L ru">Решения для любого двора</span><span class="L es">Soluciones para Cada Patio</span></h2>
-    <!-- Pergolas subheader -->
-    <div class="services-subheader">
-      <span class="Li en on">🏛️ Pergolas & Decks</span>
-      <span class="Li ru">🏛️ Перголы & Деки</span>
-      <span class="Li es">🏛️ Pérgolas & Decks</span>
-    </div>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Classic pergola" loading="lazy"/>
-        <div class="service-body">
-          <div class="service-icon">🏛️</div>
-          <h3><span class="Li en on">Classic Pergolas</span><span class="Li ru">Классические перголы</span><span class="Li es">Pérgolas Clásicas</span></h3>
-          <p><span class="L en on">Timeless wood or aluminum structures that add shade and elegance to any outdoor space.</span><span class="L ru">Традиционные деревянные или алюминиевые конструкции, добавляющие тень и элегантность.</span><span class="L es">Estructuras clásicas de madera o aluminio que añaden sombra y elegancia.</span></p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Attached pergola" loading="lazy"/>
-        <div class="service-body">
-          <div class="service-icon">🌿</div>
-          <h3><span class="Li en on">Attached Pergolas</span><span class="Li ru">Пристроенные перголы</span><span class="Li es">Pérgolas Adosadas</span></h3>
-          <p><span class="L en on">Seamlessly connected to your home, extending your living space into the outdoors.</span><span class="L ru">Плавно соединены с домом, расширяя жилое пространство на открытый воздух.</span><span class="L es">Conectadas perfectamente a su hogar, extendiendo su espacio habitable.</span></p>
-        </div>
-      </div>
-
-<!--&lt;!&ndash;      <div class="service-card">&ndash;&gt;-->
-<!--&lt;!&ndash;        <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5cf94d891d021c00015c8f01/9f231937-e1c0-45f7-8638-0f875785c866/pratic_pergole_01_opera_scheda.jpg" alt="Louvered pergola" loading="lazy"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="service-body">&ndash;&gt;-->
-<!--&lt;!&ndash;          <div class="service-icon">☀️</div>&ndash;&gt;-->
-<!--&lt;!&ndash;          <h3><span class="Li en on">Louvered Pergolas</span><span class="Li ru">Жалюзийные перголы</span><span class="Li es">Pérgolas con Persianas</span></h3>&ndash;&gt;-->
-<!--&lt;!&ndash;          <p><span class="L en on">Adjustable aluminum louvers let you control sun and rain — perfect for Texas weather.</span><span class="L ru">Регулируемые алюминиевые ламели — управляйте солнцем и дождём.</span><span class="L es">Lamas de aluminio ajustables para controlar el sol y la lluvia.</span></p>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;      <div class="service-card">&ndash;&gt;-->
-<!--&lt;!&ndash;        <img class="service-img" src="https://i.pinimg.com/736x/23/29/ea/2329ea3104ccf51fb6622a8200c04aaa.jpg" alt="Outdoor kitchen" loading="lazy"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="service-body">&ndash;&gt;-->
-<!--&lt;!&ndash;          <div class="service-icon">🔥</div>&ndash;&gt;-->
-<!--&lt;!&ndash;          <h3><span class="Li en on">Outdoor Kitchens</span><span class="Li ru">Летние кухни</span><span class="Li es">Cocinas al Aire Libre</span></h3>&ndash;&gt;-->
-<!--&lt;!&ndash;          <p><span class="L en on">Pergola + outdoor kitchen combos that make your backyard the ultimate entertaining space.</span><span class="L ru">Пергола + летняя кухня — идеальное место для отдыха.</span><span class="L es">Combinaciones de pérgola + cocina exterior para el espacio definitivo.</span></p>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-
-<!--    </div>-->
-
-    <!-- Decks subheader -->
-<!--    <div class="services-subheader" style="margin-top:48px">-->
-<!--      <span class="Li en on">🪵 Decks</span>-->
-<!--      <span class="Li ru">🪵 Деки</span>-->
-<!--      <span class="Li es">🪵 Decks</span>-->
-<!--    </div>-->
-<!--    <div class="services-grid">-->
-
-      <div class="service-card">
-        <img class="service-img" src="https://static.vecteezy.com/system/resources/previews/073/985/418/large_2x/balcony-with-natural-wood-floor-dense-greenery-and-morning-light-free-photo.jpeg" alt="Wood deck" loading="lazy"/>
-        <div class="service-body">
-          <div class="service-icon">🪵</div>
-          <h3><span class="Li en on">Wood Decks</span><span class="Li ru">Деревянные деки</span><span class="Li es">Decks de Madera</span></h3>
-          <p><span class="L en on">Pressure-treated wood decks built to handle Texas heat and humidity.</span><span class="L ru">Деки из обработанного дерева для техасского климата.</span><span class="L es">Decks de madera tratada para soportar el calor de Texas.</span></p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img class="service-img" src="https://builderscorp.com/wp-content/uploads/2024/04/TimberTech-Deck-1200x488.jpg" alt="Composite deck" loading="lazy"/>
-        <div class="service-body">
-          <div class="service-icon">✨</div>
-          <h3><span class="Li en on">Composite Decks</span><span class="Li ru">Композитные деки</span><span class="Li es">Decks Compuestos</span></h3>
-          <p><span class="L en on">Low-maintenance Trex composite decking — no staining, no splinters, lasts decades.</span><span class="L ru">Композитные деки Trex — не требуют покраски, служат десятилетиями.</span><span class="L es">Cubiertas compuestas Trex de bajo mantenimiento — sin manchas, sin astillas.</span></p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img class="service-img" src="https://hansohome.com/cdn/shop/files/10-y-min.jpg?v=1765019827&width=1800" alt="Deck pergola combo" loading="lazy"/>
-        <div class="service-body">
-          <div class="service-icon">🏡</div>
-          <h3><span class="Li en on">Deck + Pergola Combo</span><span class="Li ru">Дека + Пергола</span><span class="Li es">Deck + Pérgola Combo</span></h3>
-          <p><span class="L en on">The best of both worlds — a beautiful deck with a pergola overhead for shade and style.</span><span class="L ru">Лучшее из двух миров — дека с перголой для тени и стиля.</span><span class="L es">Lo mejor de ambos mundos — un deck hermoso con pérgola para sombra y estilo.</span></p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <img class="service-img" src="https://media.istockphoto.com/id/1329389932/photo/new-and-empty-covered-porch.jpg?s=612x612&w=0&k=20&c=eV-JckMr4_LSPhVgHSMB8RV33vYBZfUHmZgAGP8CQ-E=" alt="Covered deck" loading="lazy"/>
-        <div class="service-body">
-          <div class="service-icon">🌧️</div>
-          <h3><span class="Li en on">Covered Decks</span><span class="Li ru">Деки с навесом</span><span class="Li es">Decks Cubiertos</span></h3>
-          <p><span class="L en on">Full roof cover over your deck — enjoy your outdoor space rain or shine, year-round.</span><span class="L ru">Полная кровля над деком — пользуйтесь площадкой в любую погоду.</span><span class="L es">Cubierta completa sobre su deck para disfrutar en cualquier clima, todo el año.</span></p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="section-tag"><span class="Li en on">Our Work</span><span class="Li ru">Наши работы</span><span class="Li es">Nuestro Trabajo</span></div>
-    <h2 class="section-title"><span class="L en on">Real Projects, Real Prices</span><span class="L ru">Реальные проекты, реальные цены</span><span class="L es">Proyectos Reales, Precios Reales</span></h2>
+    <h2 class="section-title"><span class="L en on">Solutions for Every Backyard</span><span class="L ru">Решения для любого двора</span><span class="L es">Soluciones para Cada Patio</span></h2>
     <p class="section-sub" style="margin-bottom:48px">
       <span class="L en on">Every project is unique. Prices below are for reference — your free estimate will reflect your specific site and requirements.</span>
       <span class="L ru">Каждый проект уникален. Цены ниже — ориентировочные. Бесплатная оценка учтёт особенности вашего участка.</span>
       <span class="L es">Cada proyecto es único. Los precios son orientativos — su presupuesto gratuito reflejará sus requisitos específicos.</span>
     </p>
-    <div class="portfolio-grid">
 
-      <div class="portfolio-card">
-        <img class="portfolio-img" src="https://images.thdstatic.com/productImages/f13d24bc-56a0-49dd-ad11-392d3e5f3f03/svn/brown-outdoor-living-today-pergolas-bz810-1d_600.jpg" alt="Classic pergola Cedar Park" loading="lazy"/>
-        <div class="portfolio-body">
-          <div class="portfolio-tag"><span class="Li en on">Pergola</span><span class="Li ru">Пергола</span><span class="Li es">Pérgola</span></div>
-          <h4><span class="Li en on">Classic Cedar Pergola — Cedar Park, TX</span><span class="Li ru">Классическая кедровая пергола — Cedar Park, TX</span><span class="Li es">Pérgola Clásica de Cedro — Cedar Park, TX</span></h4>
-          <div class="portfolio-specs">
-            <span>📐 <span class="Li en on">10×8 ft (80 sq ft)</span><span class="Li ru">10×8 фут (80 кв.фут)</span><span class="Li es">10×8 pies (80 pies²)</span></span>
-            <span>🪵 <span class="Li en on">Cedar wood, stained finish</span><span class="Li ru">Кедр, тонированная отделка</span><span class="Li es">Madera de cedro, acabado teñido</span></span>
-            <span>⏱ <span class="Li en on">3 days installation</span><span class="Li ru">3 дня монтаж</span><span class="Li es">3 días de instalación</span></span>
-            <span>ℹ <span class="Li en on">Freestanding, concrete footings, no HOA issues</span><span class="Li ru">Отдельностоящая, бетонные основания, HOA одобрено</span><span class="Li es">Independiente, cimientos de hormigón, sin problemas HOA</span></span>
-          </div>
-          <div class="portfolio-price">~$6,500</div>
-        </div>
-      </div>
+    <div class="services-grid">
+      <!-- 1. Wood Fence – бюджетный вариант -->
+<div class="service-card">
+  <img class="service-img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Wood fence" loading="lazy"/>
+  <div class="service-body">
+    <div class="portfolio-tag">
+      <span class="Li en on">Fence</span>
+      <span class="Li ru">Забор</span>
+      <span class="Li es">Cerca</span>
+    </div>
+    <h3>
+      <span class="Li en on">Wood Fences</span>
+      <span class="Li ru">Деревянные заборы</span>
+      <span class="Li es">Cercas de Madera</span>
+    </h3>
+    <p>
+      <span class="L en on">Classic privacy fences built with durable, pressure‑treated wood.</span>
+      <span class="L ru">Классические заборы для уединения из прочной обработанной древесины.</span>
+      <span class="L es">Cercas de privacidad clásicas construidas con madera tratada duradera.</span>
+    </p>
+    <p></p>
+    <div class="portfolio-specs">
+      <span>📏 <span class="Li en on">150 ft length</span><span class="Li ru">длина 150 футов</span><span class="Li es">150 pies de largo</span></span>
+      <span>🪵 <span class="Li en on">Pressure‑treated pine, dog‑ear style</span><span class="Li ru">Сосна под давлением, стиль «dog‑ear»</span><span class="Li es">Pino tratado, estilo «oreja de perro»</span></span>
+      <span>⏱ <span class="Li en on">4–6 days installation</span><span class="Li ru">4–6 дней монтажа</span><span class="Li es">4–6 días de instalación</span></span>
+    </div>
+    <div class="portfolio-price">$3,500 – $6,500</div>
+  </div>
+</div>
 
-<!--      <div class="portfolio-card">-->
-<!--        <img class="portfolio-img" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80" alt="Louvered pergola Austin" loading="lazy"/>-->
-<!--        <div class="portfolio-body">-->
-<!--          <div class="portfolio-tag"><span class="Li en on">Pergola</span><span class="Li ru">Пергола</span><span class="Li es">Pérgola</span></div>-->
-<!--          <h4><span class="Li en on">Louvered Aluminum Pergola — Austin, TX</span><span class="Li ru">Жалюзийная алюминиевая пергола — Austin, TX</span><span class="Li es">Pérgola de Aluminio con Persianas — Austin, TX</span></h4>-->
-<!--          <div class="portfolio-specs">-->
-<!--            <span>📐 <span class="Li en on">12×20 ft (240 sq ft)</span><span class="Li ru">12×20 фут (240 кв.фут)</span><span class="Li es">12×20 pies (240 pies²)</span></span>-->
-<!--            <span>🔩 <span class="Li en on">Powder-coated aluminum, motorized louvers</span><span class="Li ru">Алюминий с порошковым покрытием, моторизованные ламели</span><span class="Li es">Aluminio lacado, persianas motorizadas</span></span>-->
-<!--            <span>⏱ <span class="Li en on">4 days installation</span><span class="Li ru">4 дня монтаж</span><span class="Li es">4 días de instalación</span></span>-->
-<!--            <span>ℹ️ <span class="Li en on">Attached to house, integrated rain gutters</span><span class="Li ru">Пристроена к дому, встроенные водостоки</span><span class="Li es">Adosada a la casa, canalones integrados</span></span>-->
-<!--          </div>-->
-<!--          <div class="portfolio-price">~$14,800</div>-->
+<!-- 2. Wood Deck – бюджетный вариант -->
+<div class="service-card">
+  <img class="service-img" src="https://static.vecteezy.com/system/resources/previews/073/985/418/large_2x/balcony-with-natural-wood-floor-dense-greenery-and-morning-light-free-photo.jpeg" alt="Wood deck" loading="lazy"/>
+  <div class="service-body">
+    <div class="portfolio-tag">
+      <span class="Li en on">Deck</span>
+      <span class="Li ru">Терраса</span>
+      <span class="Li es">Deck</span>
+    </div>
+    <h3>
+      <span class="Li en on">Wood Decks</span>
+      <span class="Li ru">Деревянные террасы</span>
+      <span class="Li es">Decks de Madera</span>
+    </h3>
+    <p>
+      <span class="L en on">Pressure‑treated wood decks built to handle Texas heat and humidity.</span>
+      <span class="L ru">Террасы из обработанной древесины, выдерживающие техасскую жару и влажность.</span>
+      <span class="L es">Decks de madera tratada para resistir el calor y la humedad de Texas.</span>
+    </p>
+    <p></p>
+    <div class="portfolio-specs">
+      <span>📐 <span class="Li en on">200 sq ft</span><span class="Li ru">200 кв. футов</span><span class="Li es">200 pies²</span></span>
+      <span>🪵 <span class="Li en on">Pressure‑treated pine / cedar</span><span class="Li ru">Сосна под давлением / кедр</span><span class="Li es">Pino tratado / cedro</span></span>
+      <span>⏱ <span class="Li en on">3–5 days installation</span><span class="Li ru">3–5 дней монтажа</span><span class="Li es">3–5 días de instalación</span></span>
+    </div>
+    <div class="portfolio-price">$5,500 – $8,500</div>
+  </div>
+</div>
+
+<!-- 3. Classic Pergola – средний сегмент -->
+<div class="service-card">
+  <img class="service-img" src="https://images.thdstatic.com/productImages/f13d24bc-56a0-49dd-ad11-392d3e5f3f03/svn/brown-outdoor-living-today-pergolas-bz810-1d_600.jpg" alt="Classic pergola" loading="lazy"/>
+  <div class="service-body">
+    <div class="portfolio-tag">
+      <span class="Li en on">Pergola</span>
+      <span class="Li ru">Пергола</span>
+      <span class="Li es">Pérgola</span>
+    </div>
+    <h3>
+      <span class="Li en on">Classic Pergolas</span>
+      <span class="Li ru">Классические перголы</span>
+      <span class="Li es">Pérgolas Clásicas</span>
+    </h3>
+    <p>
+      <span class="L en on">Timeless wood structures that add shade and elegance to any outdoor space.</span>
+      <span class="L ru">Классические деревянные конструкции, добавляющие тень и элегантность любому участку.</span>
+      <span class="L es">Estructuras de madera atemporales que añaden sombra y elegancia a cualquier espacio exterior.</span>
+    </p>
+    <p></p>
+    <div class="portfolio-specs">
+      <span>📐 <span class="Li en on">120 sq ft</span><span class="Li ru">120 кв. футов</span><span class="Li es">120 pies²</span></span>
+      <span>🪵 <span class="Li en on">Cedar or pressure‑treated pine</span><span class="Li ru">Кедр или сосна под давлением</span><span class="Li es">Cedro o pino tratado</span></span>
+      <span>⏱ <span class="Li en on">2–3 days installation</span><span class="Li ru">2–3 дня монтажа</span><span class="Li es">2–3 días de instalación</span></span>
+    </div>
+    <div class="portfolio-price">$4,500 – $7,500</div>
+  </div>
+</div>
+
+<!-- 4. Attached Pergola – средний сегмент -->
+<div class="service-card">
+  <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?q=80&w=1170&auto=format&fit=crop" alt="Attached pergola" loading="lazy"/>
+  <div class="service-body">
+    <div class="portfolio-tag">
+      <span class="Li en on">Pergola</span>
+      <span class="Li ru">Пергола</span>
+      <span class="Li es">Pérgola</span>
+    </div>
+    <h3>
+      <span class="Li en on">Attached Pergolas</span>
+      <span class="Li ru">Пристроенные перголы</span>
+      <span class="Li es">Pérgolas Adosadas</span>
+    </h3>
+    <p>
+      <span class="L en on">Seamlessly connected to your home, extending your living space outdoors.</span>
+      <span class="L ru">Плавно примыкают к дому, расширяя жилое пространство на улицу.</span>
+      <span class="L es">Conectadas perfectamente a su hogar, ampliando su espacio habitable al aire libre.</span>
+    </p>
+    <p></p>
+    <div class="portfolio-specs">
+      <span>📐 <span class="Li en on">150 sq ft</span><span class="Li ru">150 кв. футов</span><span class="Li es">150 pies²</span></span>
+      <span>🪵 <span class="Li en on">Cedar or pressure‑treated pine</span><span class="Li ru">Кедр или сосна под давлением</span><span class="Li es">Cedro o pino tratado</span></span>
+      <span>⏱ <span class="Li en on">3–4 days installation</span><span class="Li ru">3–4 дня монтажа</span><span class="Li es">3–4 días de instalación</span></span>
+    </div>
+    <div class="portfolio-price">$5,500 – $9,000</div>
+  </div>
+</div>
+
+<!-- 5. Composite Deck – средний сегмент (чуть дороже) -->
+<div class="service-card">
+  <img class="service-img" src="https://builderscorp.com/wp-content/uploads/2024/04/TimberTech-Deck-1200x488.jpg" alt="Composite deck" loading="lazy"/>
+  <div class="service-body">
+    <div class="portfolio-tag">
+      <span class="Li en on">Deck</span>
+      <span class="Li ru">Терраса</span>
+      <span class="Li es">Deck</span>
+    </div>
+    <h3>
+      <span class="Li en on">Composite Decks</span>
+      <span class="Li ru">Композитные террасы</span>
+      <span class="Li es">Decks Compuestos</span>
+    </h3>
+    <p>
+      <span class="L en on">Low‑maintenance Trex composite decking — no staining, no splinters, lasts decades.</span>
+      <span class="L ru">Композитные террасы Trex — не требуют покраски, без заноз, служат десятилетиями.</span>
+      <span class="L es">Cubiertas compuestas Trex de bajo mantenimiento — sin manchas, sin astillas, duran décadas.</span>
+    </p>
+    <p></p>
+    <div class="portfolio-specs">
+      <span>📐 <span class="Li en on">250 sq ft</span><span class="Li ru">250 кв. футов</span><span class="Li es">250 pies²</span></span>
+      <span>✨ <span class="Li en on">Trex / TimberTech, hidden fasteners</span><span class="Li ru">Trex / TimberTech, скрытые крепления</span><span class="Li es">Trex / TimberTech, sujetadores ocultos</span></span>
+      <span>⏱ <span class="Li en on">4–6 days installation</span><span class="Li ru">4–6 дней монтажа</span><span class="Li es">4–6 días de instalación</span></span>
+    </div>
+    <div class="portfolio-price">$9,000 – $14,000</div>
+  </div>
+</div>
+
+<!-- 6. Deck + Pergola Combo – премиальный вариант -->
+<div class="service-card">
+  <img class="service-img" src="https://hansohome.com/cdn/shop/files/10-y-min.jpg?v=1765019827&width=1800" alt="Deck with pergola" loading="lazy"/>
+  <div class="service-body">
+    <div class="portfolio-tag">
+      <span class="Li en on">Deck+Pergola</span>
+      <span class="Li ru">Терраса+Пергола</span>
+      <span class="Li es">Deck+Pérgola</span>
+    </div>
+    <h3>
+      <span class="Li en on">Deck + Pergola Combo</span>
+      <span class="Li ru">Терраса + Пергола</span>
+      <span class="Li es">Deck + Pérgola</span>
+    </h3>
+    <p>
+      <span class="L en on">A beautiful deck with a pergola overhead for shade and style – the best of both worlds.</span>
+      <span class="L ru">Красивая терраса с перголой сверху для тени и стиля – лучшее из двух миров.</span>
+      <span class="L es">Un hermoso deck con una pérgola encima para sombra y estilo – lo mejor de ambos mundos.</span>
+    </p>
+    <p></p>
+    <div class="portfolio-specs">
+      <span>📐 <span class="Li en on">Deck 250 sq ft + pergola 120 sq ft</span><span class="Li ru">Терраса 250 кв. футов + пергола 120 кв. футов</span><span class="Li es">Deck 250 pies² + pérgola 120 pies²</span></span>
+      <span>✨ <span class="Li en on">Composite deck + cedar pergola</span><span class="Li ru">Композитная терраса + кедровая пергола</span><span class="Li es">Deck compuesto + pérgola de cedro</span></span>
+      <span>⏱ <span class="Li en on">7–9 days installation</span><span class="Li ru">7–9 дней монтажа</span><span class="Li es">7–9 días de instalación</span></span>
+    </div>
+    <div class="portfolio-price">$15,000 – $22,000</div>
+  </div>
+</div>
+
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Classic pergola" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="service-icon">🏛️</div>-->
+<!--          <h3><span class="Li en on">Classic Pergolas</span><span class="Li ru">Классические перголы</span><span class="Li es">Pérgolas Clásicas</span></h3>-->
+<!--          <p><span class="L en on">Timeless wood or aluminum structures that add shade and elegance to any outdoor space.</span><span class="L ru">Традиционные деревянные или алюминиевые конструкции, добавляющие тень и элегантность.</span><span class="L es">Estructuras clásicas de madera o aluminio que añaden sombra y elegancia.</span></p>-->
 <!--        </div>-->
 <!--      </div>-->
 
-<!--      <div class="portfolio-card">-->
-<!--        <img class="portfolio-img" src="https://images.unsplash.com/photo-1600210491892-03d54079b6ac?w=800&q=80" alt="Pergola outdoor kitchen Round Rock" loading="lazy"/>-->
-<!--        <div class="portfolio-body">-->
-<!--          <div class="portfolio-tag"><span class="Li en on">Pergola + Kitchen</span><span class="Li ru">Пергола + Кухня</span><span class="Li es">Pérgola + Cocina</span></div>-->
-<!--          <h4><span class="Li en on">Pergola + Outdoor Kitchen — Round Rock, TX</span><span class="Li ru">Пергола + летняя кухня — Round Rock, TX</span><span class="Li es">Pérgola + Cocina Exterior — Round Rock, TX</span></h4>-->
-<!--          <div class="portfolio-specs">-->
-<!--            <span>📐 <span class="Li en on">16×20 ft pergola + 8 ft kitchen island</span><span class="Li ru">Пергола 16×20 фут + кухонный остров 8 фут</span><span class="Li es">Pérgola 16×20 pies + isla de cocina 8 pies</span></span>-->
-<!--            <span>🔩 <span class="Li en on">Cedar pergola, stone kitchen counter, built-in grill</span><span class="Li ru">Кедровая пергола, каменная столешница, встроенный гриль</span><span class="Li es">Pérgola de cedro, encimera de piedra, parrilla integrada</span></span>-->
-<!--            <span>⏱ <span class="Li en on">7 days installation</span><span class="Li ru">7 дней монтаж</span><span class="Li es">7 días de instalación</span></span>-->
-<!--            <span>ℹ️ <span class="Li en on">Required HOA approval, obtained by client</span><span class="Li ru">Потребовалось одобрение HOA, получено клиентом</span><span class="Li es">Requirió aprobación HOA, obtenida por el cliente</span></span>-->
-<!--          </div>-->
-<!--          <div class="portfolio-price">~$28,000</div>-->
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Attached pergola" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="service-icon">🌿</div>-->
+<!--          <h3><span class="Li en on">Attached Pergolas</span><span class="Li ru">Пристроенные перголы</span><span class="Li es">Pérgolas Adosadas</span></h3>-->
+<!--          <p><span class="L en on">Seamlessly connected to your home, extending your living space into the outdoors.</span><span class="L ru">Плавно соединены с домом, расширяя жилое пространство на открытый воздух.</span><span class="L es">Conectadas perfectamente a su hogar, extendiendo su espacio habitable.</span></p>-->
 <!--        </div>-->
 <!--      </div>-->
 
-<!--      <div class="portfolio-card">-->
-<!--        <img class="portfolio-img" src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80" alt="Wood deck Pflugerville" loading="lazy"/>-->
-<!--        <div class="portfolio-body">-->
-<!--          <div class="portfolio-tag"><span class="Li en on">Deck</span><span class="Li ru">Дека</span><span class="Li es">Deck</span></div>-->
-<!--          <h4><span class="Li en on">Pressure-Treated Wood Deck — Pflugerville, TX</span><span class="Li ru">Дека из обработанного дерева — Pflugerville, TX</span><span class="Li es">Deck de Madera Tratada — Pflugerville, TX</span></h4>-->
-<!--          <div class="portfolio-specs">-->
-<!--            <span>📐 <span class="Li en on">12×18 ft (216 sq ft), ground level</span><span class="Li ru">12×18 фут (216 кв.фут), уровень земли</span><span class="Li es">12×18 pies (216 pies²), nivel del suelo</span></span>-->
-<!--            <span>🪵 <span class="Li en on">Pressure-treated pine, natural stain</span><span class="Li ru">Сосна под давлением, натуральный тонер</span><span class="Li es">Pino tratado a presión, tinte natural</span></span>-->
-<!--            <span>⏱ <span class="Li en on">3 days installation</span><span class="Li ru">3 дня монтаж</span><span class="Li es">3 días de instalación</span></span>-->
-<!--            <span>ℹ️ <span class="Li en on">Built-in benches, no permit required at ground level</span><span class="Li ru">Встроенные скамейки, разрешение не требовалось</span><span class="Li es">Bancos integrados, sin permiso requerido a nivel del suelo</span></span>-->
-<!--          </div>-->
-<!--          <div class="portfolio-price">~$7,200</div>-->
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://static.vecteezy.com/system/resources/previews/073/985/418/large_2x/balcony-with-natural-wood-floor-dense-greenery-and-morning-light-free-photo.jpeg" alt="Wood deck" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="service-icon">🪵</div>-->
+<!--          <h3><span class="Li en on">Wood Decks</span><span class="Li ru">Деревянные террасы</span><span class="Li es">Decks de Madera</span></h3>-->
+<!--          <p><span class="L en on">Pressure-treated wood decks built to handle Texas heat and humidity.</span><span class="L ru">Террасы из обработанного дерева для техасского климата.</span><span class="L es">Decks de madera tratada para soportar el calor de Texas.</span></p>-->
 <!--        </div>-->
 <!--      </div>-->
 
-      <div class="portfolio-card">
-        <img class="portfolio-img" src="https://mobileimages.lowes.com/productimages/ef1c4f90-bae4-4ebc-b956-a0a7e46b3247/63055567.jpg" alt="Composite deck Lakeway" loading="lazy"/>
-        <div class="portfolio-body">
-          <div class="portfolio-tag"><span class="Li en on">Deck</span><span class="Li ru">Дека</span><span class="Li es">Deck</span></div>
-          <h4><span class="Li en on">Trex Composite Deck — Lakeway, TX</span><span class="Li ru">Композитная дека Trex — Lakeway, TX</span><span class="Li es">Deck Compuesto Trex — Lakeway, TX</span></h4>
-          <div class="portfolio-specs">
-            <span>📐 <span class="Li en on">14×22 ft (308 sq ft), elevated 4 ft</span><span class="Li ru">14×22 фут (308 кв.фут), высота 4 фута</span><span class="Li es">14×22 pies (308 pies²), elevado 4 pies</span></span>
-            <span>✨ <span class="Li en on">Trex Transcend, Rope Swing color, hidden fasteners</span><span class="Li ru">Trex Transcend, цвет Rope Swing, скрытые крепления</span><span class="Li es">Trex Transcend, color Rope Swing, sujetadores ocultos</span></span>
-            <span>⏱ <span class="Li en on">5 days installation</span><span class="Li ru">5 дней монтаж</span><span class="Li es">5 días de instalación</span></span>
-            <span>ℹ️ <span class="Li en on">Required city permit, obtained by our team</span><span class="Li ru">Потребовалось разрешение города, получено нашей командой</span><span class="Li es">Requirió permiso municipal, obtenido por nuestro equipo</span></span>
-          </div>
-          <div class="portfolio-price">~$16,500</div>
-        </div>
-      </div>
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://builderscorp.com/wp-content/uploads/2024/04/TimberTech-Deck-1200x488.jpg" alt="Composite deck" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="service-icon">✨</div>-->
+<!--          <h3><span class="Li en on">Composite Decks</span><span class="Li ru">Композитная Терраса</span><span class="Li es">Decks Compuestos</span></h3>-->
+<!--          <p><span class="L en on">Low-maintenance Trex composite decking — no staining, no splinters, lasts decades.</span><span class="L ru">Композитные террасы Trex — не требуют покраски, служат десятилетиями.</span><span class="L es">Cubiertas compuestas Trex de bajo mantenimiento — sin manchas, sin astillas.</span></p>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="portfolio-card">
-        <img class="portfolio-img" src="https://sunsetpergolakits.com/cdn/shop/files/Traditional_Modified_to_Look_Modern_-_Outside_844x500_crop_center.jpg?v=1620074565" alt="Deck pergola combo Austin" loading="lazy"/>
-        <div class="portfolio-body">
-          <div class="portfolio-tag"><span class="Li en on">Deck + Pergola</span><span class="Li ru">Дека + Пергола</span><span class="Li es">Deck + Pérgola</span></div>
-          <h4><span class="Li en on">Composite Deck + Attached Pergola — Austin, TX</span><span class="Li ru">Композитная дека + пристроенная пергола — Austin, TX</span><span class="Li es">Deck Compuesto + Pérgola Adosada — Austin, TX</span></h4>
-          <div class="portfolio-specs">
-            <span>📐 <span class="Li en on">16×24 ft deck + 16×10 ft pergola</span><span class="Li ru">Дека 16×24 фут + пергола 16×10 фут</span><span class="Li es">Deck 16×24 pies + pérgola 16×10 pies</span></span>
-            <span>✨ <span class="Li en on">Trex deck + cedar pergola with string lights</span><span class="Li ru">Дека Trex + кедровая пергола с гирляндами</span><span class="Li es">Deck Trex + pérgola de cedro con luces</span></span>
-            <span>⏱ <span class="Li en on">8 days installation</span><span class="Li ru">8 дней монтаж</span><span class="Li es">8 días de instalación</span></span>
-            <span>ℹ️ <span class="Li en on">HOA approved, city permit included</span><span class="Li ru">HOA одобрено, разрешение города включено</span><span class="Li es">HOA aprobado, permiso municipal incluido</span></span>
-          </div>
-          <div class="portfolio-price">~$24,000</div>
-        </div>
-      </div>
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://hansohome.com/cdn/shop/files/10-y-min.jpg?v=1765019827&width=1800" alt="Deck pergola combo" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="service-icon">🏡</div>-->
+<!--          <h3><span class="Li en on">Deck + Pergola Combo</span><span class="Li ru">Терраса + Пергола</span><span class="Li es">Deck + Pérgola Combo</span></h3>-->
+<!--          <p><span class="L en on">The best of both worlds — a beautiful deck with a pergola overhead for shade and style.</span><span class="L ru">Лучшее из двух миров — Терраса с перголой для тени и стиля.</span><span class="L es">Lo mejor de ambos mundos — un deck hermoso con pérgola para sombra y estilo.</span></p>-->
+<!--        </div>-->
+<!--      </div>-->
 
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://media.istockphoto.com/id/1329389932/photo/new-and-empty-covered-porch.jpg?s=612x612&w=0&k=20&c=eV-JckMr4_LSPhVgHSMB8RV33vYBZfUHmZgAGP8CQ-E=" alt="Covered deck" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="service-icon">🌧️</div>-->
+<!--          <h3><span class="Li en on">Covered Decks</span><span class="Li ru">Террасы с навесом</span><span class="Li es">Decks Cubiertos</span></h3>-->
+<!--          <p><span class="L en on">Full roof cover over your deck — enjoy your outdoor space rain or shine, year-round.</span><span class="L ru">Кровля над террасой — пользуйтесь площадкой в любую погоду.</span><span class="L es">Cubierta completa sobre su deck para disfrutar en cualquier clima, todo el año.</span></p>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="service-card">-->
+<!--        <img class="service-img" src="https://builderscorp.com/wp-content/uploads/2024/04/TimberTech-Deck-1200x488.jpg" alt="Composite deck" loading="lazy"/>-->
+<!--        <div class="service-body">-->
+<!--          <div class="portfolio-tag"><span class="Li en on">Deck</span><span class="Li ru">Терраса</span><span class="Li es">Deck</span></div>-->
+<!--          <h3><span class="Li en on">Composite Decks</span><span class="Li ru">Композитные террасы</span><span class="Li es">Decks Compuestos</span></h3>-->
+<!--          <p><span class="L en on">Low-maintenance Trex composite decking — no staining, no splinters, lasts decades.</span><span class="L ru">Композитные террасы Trex — не требуют покраски, служат десятилетиями.</span><span class="L es">Cubiertas compuestas Trex de bajo mantenimiento — sin manchas, sin astillas.</span></p>-->
+<!--        <div class="portfolio-specs">-->
+<!--          <p></p>-->
+<!--          <span>📐 <span class="Li en on">308 sq ft</span><span class="Li ru">308 кв.фут</span><span class="Li es">308 pies²</span></span>-->
+<!--          <span>✨ <span class="Li en on">Trex Transcend, Rope Swing color, hidden fasteners</span><span class="Li ru">Trex Transcend, цвет Rope Swing, скрытые крепления</span><span class="Li es">Trex Transcend, color Rope Swing, sujetadores ocultos</span></span>-->
+<!--          <span>⏱ <span class="Li en on">5 days installation</span><span class="Li ru">5 дней монтаж</span><span class="Li es">5 días de instalación</span></span>-->
+<!--        </div>-->
+<!--        <div class="portfolio-price">~$18,500</div>-->
+<!--      </div>-->
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECT CAROUSEL (Swiper) -->
+<section class="carousel-section" id="projectCarousel">
+  <div class="container">
+    <div class="section-tag">
+      <span class="Li en on">Inspiration</span>
+      <span class="Li ru">Вдохновение</span>
+      <span class="Li es">Inspiración</span>
+    </div>
+    <h2 class="section-title">
+      <span class="L en on">Our Recent Projects</span>
+      <span class="L ru">Наши последние проекты</span>
+      <span class="L es">Nuestros Proyectos Recientes</span>
+    </h2>
+
+    <div class="swiper projectSwiper">
+      <div class="swiper-wrapper">
+        <!-- Слайд 1 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern pergola" loading="lazy">
+          <div class="slide-content">
+            <h3 class="slide-title">
+              <span class="L en on">Modern Pergola</span>
+              <span class="L ru">Современная пергола</span>
+              <span class="L es">Pérgola Moderna</span>
+            </h3>
+            <p class="slide-location">Austin, TX</p>
+            <span class="slide-price">$6,500</span>
+          </div>
+        </div>
+        <!-- Слайд 2 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?w=800&q=80" alt="Wood deck with pergola" loading="lazy">
+          <div class="slide-content">
+            <h3 class="slide-title">
+              <span class="L en on">Wood Deck + Pergola</span>
+              <span class="L ru">Деревянная терраса + пергола</span>
+              <span class="L es">Deck de Madera + Pérgola</span>
+            </h3>
+            <p class="slide-location">Cedar Park, TX</p>
+            <span class="slide-price">$12,200</span>
+          </div>
+        </div>
+        <!-- Слайд 3 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80" alt="Composite deck" loading="lazy">
+          <div class="slide-content">
+            <h3 class="slide-title">
+              <span class="L en on">Composite Deck</span>
+              <span class="L ru">Композитная терраса</span>
+              <span class="L es">Deck Compuesto</span>
+            </h3>
+            <p class="slide-location">Lakeway, TX</p>
+            <span class="slide-price">$16,500</span>
+          </div>
+        </div>
+        <!-- Добавьте свои слайды по аналогии -->
+      </div>
+      <!-- Кнопки навигации (стилизованы под сайт) -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Пагинация (точки) -->
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -473,7 +618,7 @@
 <!-- DECK REVIEW -->
 <section class="deck-review" id="decks">
   <div class="container">
-    <div class="section-tag"><span class="Li en on">Deck Guide</span><span class="Li ru">Гид по декам</span><span class="Li es">Guía de Decks</span></div>
+    <div class="section-tag"><span class="Li en on">Deck Guide</span><span class="Li ru">Гид по Террасам</span><span class="Li es">Guía de Decks</span></div>
     <h2 class="section-title"><span class="L en on">Wood vs. Composite:<br/>Which Deck Is Right for You?</span><span class="L ru">Дерево или композит:<br/>Что выбрать?</span><span class="L es">Madera vs. Compuesto:<br/>¿Cuál es el Deck Ideal?</span></h2>
     <p class="section-sub">
       <span class="L en on">Both options are excellent — the right choice depends on your budget, lifestyle, and how much maintenance you want to do. Here's an honest breakdown.</span>
@@ -488,7 +633,7 @@
         <img class="deck-type-img" src="https://austexfenceanddeck.com/wp-content/uploads/2024/09/deck-w-pergola-2.jpg" alt="Wood deck" loading="lazy"/>
         <div class="deck-type-body">
           <div class="deck-type-badge wood">🪵 <span class="Li en on">Pressure-Treated Wood</span><span class="Li ru">Обработанное дерево</span><span class="Li es">Madera Tratada</span></div>
-          <h3><span class="Li en on">Classic Wood Deck</span><span class="Li ru">Классическая деревянная дека</span><span class="Li es">Deck de Madera Clásico</span></h3>
+          <h3><span class="Li en on">Classic Wood Deck</span><span class="Li ru">Классическая деревянная Терраса</span><span class="Li es">Deck de Madera Clásico</span></h3>
           <p class="deck-desc">
             <span class="L en on">Pressure-treated pine or cedar is the most popular decking choice in Texas. Natural look, proven performance, and the lowest upfront cost. Best for homeowners who don't mind staining every 2–3 years.</span>
             <span class="L ru">Сосна или кедр под давлением — самый популярный материал в Техасе. Натуральный вид, проверенная надёжность и минимальная начальная стоимость. Подходит тем, кто не против красить каждые 2–3 года.</span>
@@ -531,7 +676,7 @@
         <img class="deck-type-img" src="https://blog.callcustombuilt.com/hs-fs/hubfs/Trex_2024-08-01_ComparingTrexCompositeDeckingColors_Blog-Header.png?width=960&height=640&name=Trex_2024-08-01_ComparingTrexCompositeDeckingColors_Blog-Header.png" alt="Composite deck" loading="lazy"/>
         <div class="deck-type-body">
           <div class="deck-type-badge composite">✨ <span class="Li en on">Trex Composite</span><span class="Li ru">Trex Композит</span><span class="Li es">Composite Trex</span></div>
-          <h3><span class="Li en on">Composite Deck</span><span class="Li ru">Композитная дека</span><span class="Li es">Deck Compuesto</span></h3>
+          <h3><span class="Li en on">Composite Deck</span><span class="Li ru">Композитная Терраса</span><span class="Li es">Deck Compuesto</span></h3>
           <p class="deck-desc">
             <span class="L en on">Trex and similar composite decking is made from recycled wood and plastic. No staining, no splinters, virtually zero maintenance. Higher upfront cost, but pays off over 25–30 years of life.</span>
             <span class="L ru">Trex и аналогичные материалы — из переработанного дерева и пластика. Не требуют покраски, без заноз, почти без обслуживания. Выше начальная стоимость, но окупается за 25–30 лет службы.</span>
@@ -624,7 +769,7 @@
       </p>
       <a href="#contact" class="btn-primary">
         <span class="Li en on">Get Free Deck Estimate →</span>
-        <span class="Li ru">Бесплатная оценка деки →</span>
+        <span class="Li ru">Бесплатная оценка терассы →</span>
         <span class="Li es">Presupuesto Gratis para Deck →</span>
       </a>
     </div>
@@ -765,10 +910,10 @@
                 <option value="attached" data-en="Attached Pergola" data-ru="Пристроенная пергола" data-es="Pérgola Adosada"></option>
 <!--                <option value="louvered" data-en="Louvered Pergola" data-ru="Жалюзийная пергола" data-es="Pérgola con Persianas"></option>-->
 <!--                <option value="kitchen" data-en="Outdoor Kitchen Combo" data-ru="С летней кухней" data-es="Con Cocina Exterior"></option>-->
-                <option value="deck_wood" data-en="Wood Deck" data-ru="Деревянная дека" data-es="Deck de Madera"></option>
-                <option value="deck_composite" data-en="Composite Deck" data-ru="Композитная дека" data-es="Deck Compuesto"></option>
-                <option value="deck_pergola" data-en="Deck + Pergola Combo" data-ru="Дека + Пергола" data-es="Deck + Pérgola Combo"></option>
-                <option value="covered_deck" data-en="Covered Deck" data-ru="Дека с навесом" data-es="Deck Cubierto"></option>
+                <option value="deck_wood" data-en="Wood Deck" data-ru="Деревянная Терраса" data-es="Deck de Madera"></option>
+                <option value="deck_composite" data-en="Composite Deck" data-ru="Композитная Терраса" data-es="Deck Compuesto"></option>
+                <option value="deck_pergola" data-en="Deck + Pergola Combo" data-ru="Терраса + Пергола" data-es="Deck + Pérgola Combo"></option>
+                <option value="covered_deck" data-en="Covered Deck" data-ru="Терраса с навесом" data-es="Deck Cubierto"></option>
                 <option value="unsure" data-en="Not sure yet" data-ru="Не знаю" data-es="No estoy seguro/a"></option>
               </select>
             </div>
@@ -994,6 +1139,29 @@
     e.target.value = v;
   });
 
+  // Инициализация Swiper карусели
+  document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.projectSwiper')) {
+      const swiper = new Swiper('.projectSwiper', {
+        loop: true,
+        autoplay: {
+          delay: 6000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        speed: 600,
+        effect: 'slide', // можно заменить на 'fade' для плавного затухания
+      });
+    }
+  });
+
   function sanitize(str) {
     return str.replace(/[<>"'`;&|\\\/\(\)\{\}\[\]]/g, '').trim();
   }
@@ -1062,6 +1230,7 @@
       document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
     });
   });
+
 </script>
 </body>
 </html>
