@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TexaPergola — Custom Pergolas in Austin, TX</title>
-  <meta name="description" content="Custom pergolas built for Texas. Quality craftsmanship, free estimates, serving Austin and surrounding areas." />
+  <title>TexaPergola — Custom Pergolas & Decks in Austin, TX</title>
+  <meta name="description" content="Custom pergolas and decks built for Texas. Quality craftsmanship, free estimates, serving Austin and surrounding areas." />
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z6Q3FZXBT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1Z6Q3FZXBT');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z6Q3FZXBT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1Z6Q3FZXBT');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -75,6 +74,7 @@
     .section-title { font-family:'Playfair Display',serif; font-size:clamp(32px,4vw,52px); font-weight:700; line-height:1.15; margin-bottom:20px; }
     .section-sub { font-size:17px; color:#666; line-height:1.7; max-width:560px; font-weight:300; }
 
+    /* SERVICES */
     .services { background:var(--sand); }
     .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2px; margin-top:56px; }
     .service-card { background:var(--cream); overflow:hidden; position:relative; transition:all 0.3s; }
@@ -86,71 +86,7 @@
     .service-icon { font-size:30px; margin-bottom:12px; }
     .service-card h3 { font-family:'Playfair Display',serif; font-size:20px; margin-bottom:10px; }
     .service-card p { font-size:14px; color:#666; line-height:1.7; font-weight:300; }
-
-    .why { background:var(--cream); }
-    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:56px; }
-    .why-image { position:relative; border-radius:2px; overflow:hidden; aspect-ratio:4/5; }
-    .why-image img { width:100%; height:100%; object-fit:cover; }
-    .why-image::after { content:''; position:absolute; inset:0; border:3px solid var(--terra); border-radius:2px; transform:translate(16px,16px); z-index:-1; }
-    .why-points { display:flex; flex-direction:column; gap:32px; }
-    .why-point { display:flex; gap:20px; align-items:flex-start; }
-    .why-num { font-family:'Playfair Display',serif; font-size:48px; font-weight:900; color:var(--sand); line-height:1; min-width:52px; }
-    .why-point h4 { font-size:17px; font-weight:500; margin-bottom:6px; }
-    .why-point p { font-size:14px; color:#777; line-height:1.7; font-weight:300; }
-
-    .process { background:var(--dark); color:#fff; }
-    .process .section-title { color:#fff; }
-    .process .section-sub { color:rgba(255,255,255,0.5); }
-    .process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0; margin-top:64px; position:relative; }
-    .process-steps::before { content:''; position:absolute; top:32px; left:0; right:0; height:1px; background:rgba(255,255,255,0.1); }
-    .step { padding:0 32px 0 0; position:relative; }
-    .step-num { width:64px; height:64px; border-radius:50%; background:var(--terra); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:#fff; margin-bottom:28px; position:relative; z-index:1; }
-    .step h4 { font-size:16px; font-weight:500; margin-bottom:10px; color:#fff; }
-    .step p { font-size:14px; color:rgba(255,255,255,0.45); line-height:1.7; font-weight:300; }
-
-    .contact { background:var(--sand); }
-    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; margin-top:56px; }
-    .contact-info h3 { font-family:'Playfair Display',serif; font-size:28px; margin-bottom:16px; }
-    .contact-info p { font-size:15px; color:#666; line-height:1.8; margin-bottom:32px; font-weight:300; }
-    .contact-detail { display:flex; align-items:center; gap:12px; margin-bottom:16px; font-size:15px; }
-    .contact-detail span:first-child { font-size:20px; }
-
-    .form-wrap { background:#fff; padding:48px; border-radius:2px; box-shadow:0 4px 40px rgba(0,0,0,0.06); }
-    .form-title { font-family:'Playfair Display',serif; font-size:24px; margin-bottom:32px; }
-    .form-group { margin-bottom:20px; }
-    .form-group label { display:block; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#888; margin-bottom:8px; font-weight:500; }
-    .form-group label .req { color:var(--terra); }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width:100%; padding:14px 16px; border:1.5px solid #E5DDD0; border-radius:2px;
-      font-family:'DM Sans',sans-serif; font-size:15px; color:var(--dark);
-      background:#FDFAF6; transition:border-color 0.2s; outline:none;
-      appearance:none; -webkit-appearance:none;
-    }
-    .form-group select {
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat:no-repeat; background-position:right 14px center; padding-right:40px;
-    }
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:var(--terra); background:#fff; }
-    .form-group input.error,.form-group select.error,.form-group textarea.error { border-color:#e53e3e; }
-    .error-msg { font-size:12px; color:#e53e3e; margin-top:4px; display:none; }
-    .form-group textarea { resize:vertical; min-height:90px; }
-    /* FIX: name row aligned at top */
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start; }
-
-
-
-    .form-submit { width:100%; padding:16px; background:var(--terra); color:#fff; border:none; border-radius:2px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; letter-spacing:0.05em; cursor:pointer; transition:all 0.25s; margin-top:8px; }
-    .form-submit:hover { background:var(--accent); transform:translateY(-1px); }
-    .form-note { font-size:12px; color:#aaa; text-align:center; margin-top:14px; }
-    .success-msg { display:none; text-align:center; padding:48px 32px; }
-    .success-msg .check { font-size:48px; margin-bottom:16px; }
-    .success-msg h4 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:8px; }
-    .success-msg p { font-size:14px; color:#888; }
-
-    footer { background:var(--dark); color:rgba(255,255,255,0.4); padding:40px 32px; text-align:center; font-size:13px; }
-    footer strong { color:rgba(255,255,255,0.7); }
+    .services-subheader { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--dark); padding-bottom:14px; border-bottom:2px solid var(--terra); display:inline-block; }
 
     /* PORTFOLIO */
     .portfolio { background: var(--cream); }
@@ -164,6 +100,104 @@
     .portfolio-specs { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
     .portfolio-specs span { font-size:13px; color:#666; line-height:1.5; }
     .portfolio-price { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--terra); }
+
+    /* DECK REVIEW */
+    .deck-review { background: var(--sand); }
+    .deck-compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:56px; }
+    .deck-type-card { background:#fff; border-radius:2px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); }
+    .deck-type-img { width:100%; height:240px; object-fit:cover; display:block; }
+    .deck-type-body { padding:32px; }
+    .deck-type-badge { display:inline-block; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:16px; font-weight:500; }
+    .deck-type-badge.wood { background:#E8D5B7; color:var(--wood); }
+    .deck-type-badge.composite { background:#D4E8D4; color:var(--sage); }
+    .deck-type-card h3 { font-family:'Playfair Display',serif; font-size:24px; margin-bottom:12px; }
+    .deck-type-card .deck-desc { font-size:15px; color:#666; line-height:1.7; margin-bottom:24px; font-weight:300; }
+    .deck-pros-cons { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
+    .pros-block h5, .cons-block h5 { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:500; margin-bottom:10px; }
+    .pros-block h5 { color:var(--sage); }
+    .cons-block h5 { color:#C0392B; }
+    .pros-block ul, .cons-block ul { list-style:none; display:flex; flex-direction:column; gap:6px; }
+    .pros-block li, .cons-block li { font-size:13px; color:#555; line-height:1.5; padding-left:18px; position:relative; }
+    .pros-block li::before { content:'✓'; position:absolute; left:0; color:var(--sage); font-weight:700; }
+    .cons-block li::before { content:'✗'; position:absolute; left:0; color:#C0392B; font-weight:700; }
+    .deck-price-range { border-top:1px solid #F0E8DC; padding-top:20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .deck-price-range .price-label { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#999; }
+    .deck-price-range .price-val { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--terra); }
+
+    .deck-compare-table { margin-top:56px; background:#fff; border-radius:2px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.06); }
+    .deck-compare-table table { width:100%; border-collapse:collapse; }
+    .deck-compare-table th { background:var(--dark); color:#fff; padding:16px 20px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-align:left; font-weight:500; }
+    .deck-compare-table th:first-child { width:30%; }
+    .deck-compare-table td { padding:14px 20px; font-size:14px; color:#555; border-bottom:1px solid #F0E8DC; vertical-align:top; line-height:1.5; }
+    .deck-compare-table tr:last-child td { border-bottom:none; }
+    .deck-compare-table tr:nth-child(even) td { background:#FDFAF6; }
+    .deck-compare-table td:first-child { font-weight:500; color:var(--dark); }
+    .badge-wood { background:#E8D5B7; color:var(--wood); padding:2px 8px; border-radius:10px; font-size:11px; font-weight:500; }
+    .badge-composite { background:#D4E8D4; color:var(--sage); padding:2px 8px; border-radius:10px; font-size:11px; font-weight:500; }
+    .deck-cta { text-align:center; margin-top:48px; }
+    .deck-cta p { font-size:16px; color:#666; margin-bottom:20px; }
+
+    /* WHY */
+    .why { background:var(--cream); }
+    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:56px; }
+    .why-image { position:relative; border-radius:2px; overflow:hidden; aspect-ratio:4/5; }
+    .why-image img { width:100%; height:100%; object-fit:cover; }
+    .why-image::after { content:''; position:absolute; inset:0; border:3px solid var(--terra); border-radius:2px; transform:translate(16px,16px); z-index:-1; }
+    .why-points { display:flex; flex-direction:column; gap:32px; }
+    .why-point { display:flex; gap:20px; align-items:flex-start; }
+    .why-num { font-family:'Playfair Display',serif; font-size:48px; font-weight:900; color:var(--sand); line-height:1; min-width:52px; }
+    .why-point h4 { font-size:17px; font-weight:500; margin-bottom:6px; }
+    .why-point p { font-size:14px; color:#777; line-height:1.7; font-weight:300; }
+
+    /* PROCESS */
+    .process { background:var(--dark); color:#fff; }
+    .process .section-title { color:#fff; }
+    .process .section-sub { color:rgba(255,255,255,0.5); }
+    .process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0; margin-top:64px; position:relative; }
+    .process-steps::before { content:''; position:absolute; top:32px; left:0; right:0; height:1px; background:rgba(255,255,255,0.1); }
+    .step { padding:0 32px 0 0; position:relative; }
+    .step-num { width:64px; height:64px; border-radius:50%; background:var(--terra); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:#fff; margin-bottom:28px; position:relative; z-index:1; }
+    .step h4 { font-size:16px; font-weight:500; margin-bottom:10px; color:#fff; }
+    .step p { font-size:14px; color:rgba(255,255,255,0.45); line-height:1.7; font-weight:300; }
+
+    /* CONTACT */
+    .contact { background:var(--sand); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; margin-top:56px; }
+    .contact-info h3 { font-family:'Playfair Display',serif; font-size:28px; margin-bottom:16px; }
+    .contact-info p { font-size:15px; color:#666; line-height:1.8; margin-bottom:32px; font-weight:300; }
+    .contact-detail { display:flex; align-items:center; gap:12px; margin-bottom:16px; font-size:15px; }
+    .contact-detail span:first-child { font-size:20px; }
+    .form-wrap { background:#fff; padding:48px; border-radius:2px; box-shadow:0 4px 40px rgba(0,0,0,0.06); }
+    .form-title { font-family:'Playfair Display',serif; font-size:24px; margin-bottom:32px; }
+    .form-group { margin-bottom:20px; }
+    .form-group label { display:block; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#888; margin-bottom:8px; font-weight:500; }
+    .form-group label .req { color:var(--terra); }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%; padding:14px 16px; border:1.5px solid #E5DDD0; border-radius:2px;
+      font-family:'DM Sans',sans-serif; font-size:15px; color:var(--dark);
+      background:#FDFAF6; transition:border-color 0.2s; outline:none;
+      appearance:none; -webkit-appearance:none;
+    }
+    .form-group select {
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:right 14px center; padding-right:40px;
+    }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:var(--terra); background:#fff; }
+    .form-group input.error,.form-group select.error,.form-group textarea.error { border-color:#e53e3e; }
+    .error-msg { font-size:12px; color:#e53e3e; margin-top:4px; display:none; }
+    .form-group textarea { resize:vertical; min-height:90px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start; }
+    .form-submit { width:100%; padding:16px; background:var(--terra); color:#fff; border:none; border-radius:2px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; letter-spacing:0.05em; cursor:pointer; transition:all 0.25s; margin-top:8px; }
+    .form-submit:hover { background:var(--accent); transform:translateY(-1px); }
+    .form-note { font-size:12px; color:#aaa; text-align:center; margin-top:14px; }
+    .success-msg { display:none; text-align:center; padding:48px 32px; }
+    .success-msg .check { font-size:48px; margin-bottom:16px; }
+    .success-msg h4 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:8px; }
+    .success-msg p { font-size:14px; color:#888; }
+
+    footer { background:var(--dark); color:rgba(255,255,255,0.4); padding:40px 32px; text-align:center; font-size:13px; }
+    footer strong { color:rgba(255,255,255,0.7); }
+
     @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
     @keyframes scrollLine { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
@@ -175,9 +209,11 @@
       .stats { gap:32px; }
       .process-steps::before { display:none; }
       .step { padding:0 0 32px; }
+      .deck-compare-grid { grid-template-columns:1fr; }
+      .deck-pros-cons { grid-template-columns:1fr; }
+      .deck-compare-table { overflow-x:auto; }
     }
 
-    /* Lang visibility */
     .L { display:none; } .L.on { display:block; }
     .Li { display:none; } .Li.on { display:inline; }
   </style>
@@ -196,9 +232,9 @@
   <div class="hero-content">
     <div class="hero-tag">Austin, Texas</div>
     <h1>
-      <span class="L en on">Custom Pergolas<br/>Built for <em>Texas</em></span>
-      <span class="L ru">Перголы на заказ<br/>для <em>Техаса</em></span>
-      <span class="L es">Pérgolas Personalizadas<br/>para <em>Texas</em></span>
+      <span class="L en on">Custom Pergolas &amp; Decks<br/>Built for <em>Texas</em></span>
+      <span class="L ru">Перголы и деки на заказ<br/>для <em>Техаса</em></span>
+      <span class="L es">Pérgolas y Decks Personalizados<br/>para <em>Texas</em></span>
     </h1>
     <p>
       <span class="L en on">Quality craftsmanship, honest pricing, and structures built to last through Texas weather. Free estimates, no pressure.</span>
@@ -233,44 +269,102 @@
 <section class="services" id="services">
   <div class="container">
     <div class="section-tag"><span class="Li en on">What We Build</span><span class="Li ru">Что мы строим</span><span class="Li es">Lo Que Construimos</span></div>
-    <h2 class="section-title"><span class="L en on">Pergola Solutions for Every Backyard</span><span class="L ru">Решения для любого двора</span><span class="L es">Soluciones para Cada Patio</span></h2>
-<div class="services-grid">
+    <h2 class="section-title"><span class="L en on">Pergola &amp; Deck Solutions for Every Backyard</span><span class="L ru">Решения для любого двора</span><span class="L es">Soluciones para Cada Patio</span></h2>
+    <!-- Pergolas subheader -->
+    <div class="services-subheader">
+      <span class="Li en on">🏛️ Pergolas</span>
+      <span class="Li ru">🏛️ Перголы</span>
+      <span class="Li es">🏛️ Pérgolas</span>
+    </div>
+    <div class="services-grid">
+
       <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?w=800&q=80" alt="Classic pergola" loading="lazy"/>
+        <img class="service-img" src="https://images.unsplash.com/photo-1527359443443-84a48aec73d2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Classic pergola" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">🏛️</div>
           <h3><span class="Li en on">Classic Pergolas</span><span class="Li ru">Классические перголы</span><span class="Li es">Pérgolas Clásicas</span></h3>
           <p><span class="L en on">Timeless wood or aluminum structures that add shade and elegance to any outdoor space.</span><span class="L ru">Традиционные деревянные или алюминиевые конструкции, добавляющие тень и элегантность.</span><span class="L es">Estructuras clásicas de madera o aluminio que añaden sombra y elegancia.</span></p>
         </div>
       </div>
+
       <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?w=800&q=80" alt="Attached pergola" loading="lazy"/>
+        <img class="service-img" src="https://images.unsplash.com/photo-1580469322701-45b34d5e6e9b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Attached pergola" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">🌿</div>
           <h3><span class="Li en on">Attached Pergolas</span><span class="Li ru">Пристроенные перголы</span><span class="Li es">Pérgolas Adosadas</span></h3>
           <p><span class="L en on">Seamlessly connected to your home, extending your living space into the outdoors.</span><span class="L ru">Плавно соединены с домом, расширяя жилое пространство на открытый воздух.</span><span class="L es">Conectadas perfectamente a su hogar, extendiendo su espacio habitable.</span></p>
         </div>
       </div>
+
       <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80" alt="Louvered pergola" loading="lazy"/>
+        <img class="service-img" src="https://images.squarespace-cdn.com/content/v1/5cf94d891d021c00015c8f01/9f231937-e1c0-45f7-8638-0f875785c866/pratic_pergole_01_opera_scheda.jpg" alt="Louvered pergola" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">☀️</div>
           <h3><span class="Li en on">Louvered Pergolas</span><span class="Li ru">Жалюзийные перголы</span><span class="Li es">Pérgolas con Persianas</span></h3>
-          <p><span class="L en on">Adjustable roof slats for complete control over sun and rain — perfect for Texas weather.</span><span class="L ru">Регулируемые ламели для полного контроля над солнцем и дождём.</span><span class="L es">Lamas ajustables para control total sobre el sol y la lluvia.</span></p>
+          <p><span class="L en on">Adjustable aluminum louvers let you control sun and rain — perfect for Texas weather.</span><span class="L ru">Регулируемые алюминиевые ламели — управляйте солнцем и дождём.</span><span class="L es">Lamas de aluminio ajustables para controlar el sol y la lluvia.</span></p>
         </div>
       </div>
+
       <div class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1600210491892-03d54079b6ac?w=800&q=80" alt="Outdoor kitchen" loading="lazy"/>
+        <img class="service-img" src="https://i.pinimg.com/736x/23/29/ea/2329ea3104ccf51fb6622a8200c04aaa.jpg" alt="Outdoor kitchen" loading="lazy"/>
         <div class="service-body">
           <div class="service-icon">🔥</div>
-          <h3
+          <h3><span class="Li en on">Outdoor Kitchens</span><span class="Li ru">Летние кухни</span><span class="Li es">Cocinas al Aire Libre</span></h3>
+          <p><span class="L en on">Pergola + outdoor kitchen combos that make your backyard the ultimate entertaining space.</span><span class="L ru">Пергола + летняя кухня — идеальное место для отдыха.</span><span class="L es">Combinaciones de pérgola + cocina exterior para el espacio definitivo.</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Decks subheader -->
+    <div class="services-subheader" style="margin-top:48px">
+      <span class="Li en on">🪵 Decks</span>
+      <span class="Li ru">🪵 Деки</span>
+      <span class="Li es">🪵 Decks</span>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80" alt="Wood deck" loading="lazy"/>
+        <div class="service-body">
+          <div class="service-icon">🪵</div>
+          <h3><span class="Li en on">Wood Decks</span><span class="Li ru">Деревянные деки</span><span class="Li es">Decks de Madera</span></h3>
+          <p><span class="L en on">Pressure-treated wood decks built to handle Texas heat and humidity.</span><span class="L ru">Деки из обработанного дерева для техасского климата.</span><span class="L es">Decks de madera tratada para soportar el calor de Texas.</span></p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80" alt="Composite deck" loading="lazy"/>
+        <div class="service-body">
+          <div class="service-icon">✨</div>
+          <h3><span class="Li en on">Composite Decks</span><span class="Li ru">Композитные деки</span><span class="Li es">Decks Compuestos</span></h3>
+          <p><span class="L en on">Low-maintenance Trex composite decking — no staining, no splinters, lasts decades.</span><span class="L ru">Композитные деки Trex — не требуют покраски, служат десятилетиями.</span><span class="L es">Cubiertas compuestas Trex de bajo mantenimiento — sin manchas, sin astillas.</span></p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="Deck pergola combo" loading="lazy"/>
+        <div class="service-body">
+          <div class="service-icon">🏡</div>
+          <h3><span class="Li en on">Deck + Pergola Combo</span><span class="Li ru">Дека + Пергола</span><span class="Li es">Deck + Pérgola Combo</span></h3>
+          <p><span class="L en on">The best of both worlds — a beautiful deck with a pergola overhead for shade and style.</span><span class="L ru">Лучшее из двух миров — дека с перголой для тени и стиля.</span><span class="L es">Lo mejor de ambos mundos — un deck hermoso con pérgola para sombra y estilo.</span></p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80" alt="Covered deck" loading="lazy"/>
+        <div class="service-body">
+          <div class="service-icon">🌧️</div>
+          <h3><span class="Li en on">Covered Decks</span><span class="Li ru">Деки с навесом</span><span class="Li es">Decks Cubiertos</span></h3>
+          <p><span class="L en on">Full roof cover over your deck — enjoy your outdoor space rain or shine, year-round.</span><span class="L ru">Полная кровля над деком — пользуйтесь площадкой в любую погоду.</span><span class="L es">Cubierta completa sobre su deck para disfrutar en cualquier clima, todo el año.</span></p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why">
-  <div class="container">
-    <!-- PORTFOLIO -->
+<!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="container">
     <div class="section-tag"><span class="Li en on">Our Work</span><span class="Li ru">Наши работы</span><span class="Li es">Nuestro Trabajo</span></div>
@@ -375,16 +469,208 @@
     </div>
   </div>
 </section>
+
+<!-- DECK REVIEW -->
+<section class="deck-review" id="decks">
+  <div class="container">
+    <div class="section-tag"><span class="Li en on">Deck Guide</span><span class="Li ru">Гид по декам</span><span class="Li es">Guía de Decks</span></div>
+    <h2 class="section-title"><span class="L en on">Wood vs. Composite:<br/>Which Deck Is Right for You?</span><span class="L ru">Дерево или композит:<br/>Что выбрать?</span><span class="L es">Madera vs. Compuesto:<br/>¿Cuál es el Deck Ideal?</span></h2>
+    <p class="section-sub">
+      <span class="L en on">Both options are excellent — the right choice depends on your budget, lifestyle, and how much maintenance you want to do. Here's an honest breakdown.</span>
+      <span class="L ru">Оба варианта хороши — выбор зависит от бюджета, образа жизни и готовности к уходу. Честный разбор ниже.</span>
+      <span class="L es">Ambas opciones son excelentes — la elección correcta depende de su presupuesto, estilo de vida y cuánto mantenimiento desea. Un análisis honesto.</span>
+    </p>
+
+    <div class="deck-compare-grid">
+
+      <!-- WOOD -->
+      <div class="deck-type-card">
+        <img class="deck-type-img" src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80" alt="Wood deck" loading="lazy"/>
+        <div class="deck-type-body">
+          <div class="deck-type-badge wood">🪵 <span class="Li en on">Pressure-Treated Wood</span><span class="Li ru">Обработанное дерево</span><span class="Li es">Madera Tratada</span></div>
+          <h3><span class="Li en on">Classic Wood Deck</span><span class="Li ru">Классическая деревянная дека</span><span class="Li es">Deck de Madera Clásico</span></h3>
+          <p class="deck-desc">
+            <span class="L en on">Pressure-treated pine or cedar is the most popular decking choice in Texas. Natural look, proven performance, and the lowest upfront cost. Best for homeowners who don't mind staining every 2–3 years.</span>
+            <span class="L ru">Сосна или кедр под давлением — самый популярный материал в Техасе. Натуральный вид, проверенная надёжность и минимальная начальная стоимость. Подходит тем, кто не против красить каждые 2–3 года.</span>
+            <span class="L es">El pino o cedro tratado a presión es la opción más popular en Texas. Aspecto natural, rendimiento probado y el menor costo inicial. Ideal para propietarios que no les importa teñir cada 2–3 años.</span>
+          </p>
+          <div class="deck-pros-cons">
+            <div class="pros-block">
+              <h5><span class="Li en on">Pros</span><span class="Li ru">Плюсы</span><span class="Li es">Ventajas</span></h5>
+              <ul>
+                <li><span class="Li en on">Lower upfront cost</span><span class="Li ru">Меньше стоит</span><span class="Li es">Menor costo inicial</span></li>
+                <li><span class="Li en on">Natural, warm look</span><span class="Li ru">Натуральный вид</span><span class="Li es">Aspecto natural y cálido</span></li>
+                <li><span class="Li en on">Easy to repair</span><span class="Li ru">Легко ремонтировать</span><span class="Li es">Fácil de reparar</span></li>
+                <li><span class="Li en on">Widely available</span><span class="Li ru">Доступен везде</span><span class="Li es">Ampliamente disponible</span></li>
+              </ul>
+            </div>
+            <div class="cons-block">
+              <h5><span class="Li en on">Cons</span><span class="Li ru">Минусы</span><span class="Li es">Desventajas</span></h5>
+              <ul>
+                <li><span class="Li en on">Needs staining every 2–3 yrs</span><span class="Li ru">Покраска каждые 2–3 года</span><span class="Li es">Requiere teñido cada 2–3 años</span></li>
+                <li><span class="Li en on">Can warp in Texas heat</span><span class="Li ru">Может коробиться от жары</span><span class="Li es">Puede deformarse con el calor</span></li>
+                <li><span class="Li en on">Risk of splinters</span><span class="Li ru">Риск заноз</span><span class="Li es">Riesgo de astillas</span></li>
+                <li><span class="Li en on">Shorter lifespan (15–20 yrs)</span><span class="Li ru">Срок службы 15–20 лет</span><span class="Li es">Vida útil más corta (15–20 años)</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="deck-price-range">
+            <div>
+              <div class="price-label"><span class="Li en on">Typical Range</span><span class="Li ru">Обычная стоимость</span><span class="Li es">Rango Típico</span></div>
+              <div class="price-val">$18–$25 / sq ft</div>
+            </div>
+            <a href="#contact" class="btn-primary" style="padding:12px 24px;font-size:14px">
+              <span class="Li en on">Get Estimate</span><span class="Li ru">Оценка</span><span class="Li es">Presupuesto</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPOSITE -->
+      <div class="deck-type-card">
+        <img class="deck-type-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80" alt="Composite deck" loading="lazy"/>
+        <div class="deck-type-body">
+          <div class="deck-type-badge composite">✨ <span class="Li en on">Trex Composite</span><span class="Li ru">Trex Композит</span><span class="Li es">Composite Trex</span></div>
+          <h3><span class="Li en on">Composite Deck</span><span class="Li ru">Композитная дека</span><span class="Li es">Deck Compuesto</span></h3>
+          <p class="deck-desc">
+            <span class="L en on">Trex and similar composite decking is made from recycled wood and plastic. No staining, no splinters, virtually zero maintenance. Higher upfront cost, but pays off over 25–30 years of life.</span>
+            <span class="L ru">Trex и аналогичные материалы — из переработанного дерева и пластика. Не требуют покраски, без заноз, почти без обслуживания. Выше начальная стоимость, но окупается за 25–30 лет службы.</span>
+            <span class="L es">Trex y materiales similares están hechos de madera reciclada y plástico. Sin teñido, sin astillas, mantenimiento prácticamente nulo. Mayor costo inicial, pero se amortiza en 25–30 años de vida útil.</span>
+          </p>
+          <div class="deck-pros-cons">
+            <div class="pros-block">
+              <h5><span class="Li en on">Pros</span><span class="Li ru">Плюсы</span><span class="Li es">Ventajas</span></h5>
+              <ul>
+                <li><span class="Li en on">Zero staining or sealing</span><span class="Li ru">Не нужно красить</span><span class="Li es">Sin teñido ni sellado</span></li>
+                <li><span class="Li en on">Won't warp, rot, or splinter</span><span class="Li ru">Не коробится, не гниёт</span><span class="Li es">No se deforma ni pudre</span></li>
+                <li><span class="Li en on">25–30 year lifespan</span><span class="Li ru">Служит 25–30 лет</span><span class="Li es">Vida útil de 25–30 años</span></li>
+                <li><span class="Li en on">Many colors &amp; textures</span><span class="Li ru">Много цветов и текстур</span><span class="Li es">Muchos colores y texturas</span></li>
+              </ul>
+            </div>
+            <div class="cons-block">
+              <h5><span class="Li en on">Cons</span><span class="Li ru">Минусы</span><span class="Li es">Desventajas</span></h5>
+              <ul>
+                <li><span class="Li en on">Higher upfront cost</span><span class="Li ru">Выше начальная цена</span><span class="Li es">Mayor costo inicial</span></li>
+                <li><span class="Li en on">Gets hot in direct sun</span><span class="Li ru">Нагревается на солнце</span><span class="Li es">Se calienta bajo el sol directo</span></li>
+                <li><span class="Li en on">Harder to repair scratches</span><span class="Li ru">Сложнее ремонтировать царапины</span><span class="Li es">Más difícil reparar rayones</span></li>
+                <li><span class="Li en on">Looks less natural</span><span class="Li ru">Менее натуральный вид</span><span class="Li es">Aspecto menos natural</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="deck-price-range">
+            <div>
+              <div class="price-label"><span class="Li en on">Typical Range</span><span class="Li ru">Обычная стоимость</span><span class="Li es">Rango Típico</span></div>
+              <div class="price-val">$30–$45 / sq ft</div>
+            </div>
+            <a href="#contact" class="btn-primary" style="padding:12px 24px;font-size:14px">
+              <span class="Li en on">Get Estimate</span><span class="Li ru">Оценка</span><span class="Li es">Presupuesto</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div class="deck-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th><span class="Li en on">Feature</span><span class="Li ru">Параметр</span><span class="Li es">Característica</span></th>
+            <th><span class="badge-wood">🪵 <span class="Li en on">Wood</span><span class="Li ru">Дерево</span><span class="Li es">Madera</span></span></th>
+            <th><span class="badge-composite">✨ <span class="Li en on">Composite</span><span class="Li ru">Композит</span><span class="Li es">Compuesto</span></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="Li en on">Upfront Cost</span><span class="Li ru">Начальная стоимость</span><span class="Li es">Costo Inicial</span></td>
+            <td><span class="Li en on">$18–$25/sq ft</span><span class="Li ru">$18–$25/кв.фут</span><span class="Li es">$18–$25/pie²</span></td>
+            <td><span class="Li en on">$30–$45/sq ft</span><span class="Li ru">$30–$45/кв.фут</span><span class="Li es">$30–$45/pie²</span></td>
+          </tr>
+          <tr>
+            <td><span class="Li en on">Lifespan</span><span class="Li ru">Срок службы</span><span class="Li es">Vida Útil</span></td>
+            <td><span class="Li en on">15–20 years</span><span class="Li ru">15–20 лет</span><span class="Li es">15–20 años</span></td>
+            <td><span class="Li en on">25–30 years</span><span class="Li ru">25–30 лет</span><span class="Li es">25–30 años</span></td>
+          </tr>
+          <tr>
+            <td><span class="Li en on">Maintenance</span><span class="Li ru">Обслуживание</span><span class="Li es">Mantenimiento</span></td>
+            <td><span class="Li en on">Stain/seal every 2–3 yrs</span><span class="Li ru">Краска каждые 2–3 года</span><span class="Li es">Teñido cada 2–3 años</span></td>
+            <td><span class="Li en on">Wash with soap &amp; water</span><span class="Li ru">Мытьё с мылом</span><span class="Li es">Lavar con agua y jabón</span></td>
+          </tr>
+          <tr>
+            <td><span class="Li en on">Texas Heat Resistance</span><span class="Li ru">Стойкость к жаре</span><span class="Li es">Resistencia al Calor</span></td>
+            <td><span class="Li en on">Can warp if not sealed</span><span class="Li ru">Коробится без обработки</span><span class="Li es">Puede deformarse sin sellado</span></td>
+            <td><span class="Li en on">Resistant, but surface gets hot</span><span class="Li ru">Стойкий, но нагревается</span><span class="Li es">Resistente, pero se calienta</span></td>
+          </tr>
+          <tr>
+            <td><span class="Li en on">Appearance</span><span class="Li ru">Внешний вид</span><span class="Li es">Apariencia</span></td>
+            <td><span class="Li en on">Natural warm wood look</span><span class="Li ru">Натуральное дерево</span><span class="Li es">Aspecto natural de madera</span></td>
+            <td><span class="Li en on">Modern, consistent finish</span><span class="Li ru">Современный, равномерный</span><span class="Li es">Acabado moderno y uniforme</span></td>
+          </tr>
+          <tr>
+            <td><span class="Li en on">Best For</span><span class="Li ru">Подходит для</span><span class="Li es">Ideal Para</span></td>
+            <td><span class="Li en on">Budget-conscious, traditional style</span><span class="Li ru">Бюджетные решения, классика</span><span class="Li es">Presupuesto ajustado, estilo clásico</span></td>
+            <td><span class="Li en on">Low-maintenance, long-term value</span><span class="Li ru">Минимум ухода, долгосрочная ценность</span><span class="Li es">Bajo mantenimiento, valor a largo plazo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="deck-cta">
+      <p>
+        <span class="L en on">Not sure which is right for your home? We'll walk you through both options during your free estimate.</span>
+        <span class="L ru">Не знаете что выбрать? Мы разберём оба варианта на бесплатной консультации.</span>
+        <span class="L es">¿No está seguro cuál es la mejor opción? Le explicaremos ambas durante su presupuesto gratuito.</span>
+      </p>
+      <a href="#contact" class="btn-primary">
+        <span class="Li en on">Get Free Deck Estimate →</span>
+        <span class="Li ru">Бесплатная оценка деки →</span>
+        <span class="Li es">Presupuesto Gratis para Deck →</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
     <div class="why-grid">
-      <div class="why-image"><img src="https://veteranspergolasandpatiocovers.com/wp-content/uploads/2025/09/Pergolas-Installer.jpg" alt="Craftsmanship"/></div>
+      <div class="why-image">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="Craftsmanship"/>
+      </div>
       <div>
         <div class="section-tag"><span class="Li en on">Why TexaPergola</span><span class="Li ru">Почему TexaPergola</span><span class="Li es">Por Qué TexaPergola</span></div>
         <h2 class="section-title"><span class="L en on">Built Different.<br/>Built Right.</span><span class="L ru">Строим иначе.<br/>Строим правильно.</span><span class="L es">Construido Diferente.<br/>Construido Bien.</span></h2>
         <div class="why-points">
-          <div class="why-point"><div class="why-num">01</div><div><h4><span class="Li en on">Texas-grade materials</span><span class="Li ru">Материалы для Техаса</span><span class="Li es">Materiales grado Texas</span></h4><p><span class="L en on">Every structure is built to handle 100°F summers and Texas storms.</span><span class="L ru">Каждая конструкция выдерживает +38°C и техасские штормы.</span><span class="L es">Cada estructura soporta veranos de 38°C y tormentas de Texas.</span></p></div></div>
-          <div class="why-point"><div class="why-num">02</div><div><h4><span class="Li en on">Transparent pricing</span><span class="Li ru">Прозрачные цены</span><span class="Li es">Precios transparentes</span></h4><p><span class="L en on">No hidden fees. Full quote before any work begins.</span><span class="L ru">Никаких скрытых платежей. Полная смета до начала работ.</span><span class="L es">Sin cargos ocultos. Presupuesto completo antes de comenzar.</span></p></div></div>
-          <div class="why-point"><div class="why-num">03</div><div><h4><span class="Li en on">On-time delivery</span><span class="Li ru">Сдача в срок</span><span class="Li es">Entrega a tiempo</span></h4><p><span class="L en on">We respect your schedule and keep you updated at every step.</span><span class="L ru">Уважаем ваш график и держим в курсе на каждом этапе.</span><span class="L es">Respetamos su agenda con actualizaciones en cada paso.</span></p></div></div>
-          <div class="why-point"><div class="why-num">04</div><div><h4><span class="Li en on">Licensed &amp; insured</span><span class="Li ru">Лицензия и страховка</span><span class="Li es">Con licencia y seguro</span></h4><p><span class="L en on">Full peace of mind. Every project covered start to finish.</span><span class="L ru">Полное спокойствие. Каждый проект застрахован от начала до конца.</span><span class="L es">Tranquilidad total. Cada proyecto cubierto de principio a fin.</span></p></div></div>
+          <div class="why-point">
+            <div class="why-num">01</div>
+            <div>
+              <h4><span class="Li en on">Texas-grade materials</span><span class="Li ru">Материалы для Техаса</span><span class="Li es">Materiales grado Texas</span></h4>
+              <p><span class="L en on">Every structure is built to handle 100°F summers and Texas storms.</span><span class="L ru">Каждая конструкция выдерживает +38°C и техасские штормы.</span><span class="L es">Cada estructura soporta veranos de 38°C y tormentas de Texas.</span></p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">02</div>
+            <div>
+              <h4><span class="Li en on">Transparent pricing</span><span class="Li ru">Прозрачные цены</span><span class="Li es">Precios transparentes</span></h4>
+              <p><span class="L en on">No hidden fees. Full quote before any work begins.</span><span class="L ru">Никаких скрытых платежей. Полная смета до начала работ.</span><span class="L es">Sin cargos ocultos. Presupuesto completo antes de comenzar.</span></p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">03</div>
+            <div>
+              <h4><span class="Li en on">On-time delivery</span><span class="Li ru">Сдача в срок</span><span class="Li es">Entrega a tiempo</span></h4>
+              <p><span class="L en on">We respect your schedule and keep you updated at every step.</span><span class="L ru">Уважаем ваш график и держим в курсе на каждом этапе.</span><span class="L es">Respetamos su agenda con actualizaciones en cada paso.</span></p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">04</div>
+            <div>
+              <h4><span class="Li en on">Licensed &amp; insured</span><span class="Li ru">Лицензия и страховка</span><span class="Li es">Con licencia y seguro</span></h4>
+              <p><span class="L en on">Full peace of mind. Every project covered start to finish.</span><span class="L ru">Полное спокойствие. Каждый проект застрахован от начала до конца.</span><span class="L es">Tranquilidad total. Cada proyecto cubierto de principio a fin.</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -397,10 +683,26 @@
     <div class="section-tag" style="color:var(--accent)"><span class="Li en on">How It Works</span><span class="Li ru">Как это работает</span><span class="Li es">Cómo Funciona</span></div>
     <h2 class="section-title"><span class="L en on">From Idea to Your Dream Pergola</span><span class="L ru">От идеи до перголы мечты</span><span class="L es">De la Idea a su Pérgola Ideal</span></h2>
     <div class="process-steps">
-      <div class="step"><div class="step-num">1</div><h4><span class="Li en on">Submit Request</span><span class="Li ru">Заявка</span><span class="Li es">Enviar Solicitud</span></h4><p><span class="L en on">Fill out our quick form. Takes 2 minutes.</span><span class="L ru">Заполните форму. Займёт 2 минуты.</span><span class="L es">Complete el formulario. Toma 2 minutos.</span></p></div>
-      <div class="step"><div class="step-num">2</div><h4><span class="Li en on">Free Consultation</span><span class="Li ru">Консультация</span><span class="Li es">Consulta Gratis</span></h4><p><span class="L en on">We call you within 24h to discuss your vision.</span><span class="L ru">Звоним в течение 24 часов.</span><span class="L es">Le llamamos en 24h para discutir su visión.</span></p></div>
-      <div class="step"><div class="step-num">3</div><h4><span class="Li en on">Custom Quote</span><span class="Li ru">Смета</span><span class="Li es">Presupuesto</span></h4><p><span class="L en on">Detailed, no-obligation estimate.</span><span class="L ru">Подробная смета без обязательств.</span><span class="L es">Presupuesto detallado sin compromiso.</span></p></div>
-      <div class="step"><div class="step-num">4</div><h4><span class="Li en on">We Build</span><span class="Li ru">Строим</span><span class="Li es">Construimos</span></h4><p><span class="L en on">Professional installation, clean site, on schedule.</span><span class="L ru">Профессиональный монтаж, чистая площадка, в срок.</span><span class="L es">Instalación profesional, sitio limpio, en el plazo acordado.</span></p></div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4><span class="Li en on">Submit Request</span><span class="Li ru">Заявка</span><span class="Li es">Enviar Solicitud</span></h4>
+        <p><span class="L en on">Fill out our quick form. Takes 2 minutes.</span><span class="L ru">Заполните форму. Займёт 2 минуты.</span><span class="L es">Complete el formulario. Toma 2 minutos.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4><span class="Li en on">Free Consultation</span><span class="Li ru">Консультация</span><span class="Li es">Consulta Gratis</span></h4>
+        <p><span class="L en on">We call you within 24h to discuss your vision.</span><span class="L ru">Звоним в течение 24 часов.</span><span class="L es">Le llamamos en 24h para discutir su visión.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4><span class="Li en on">Custom Quote</span><span class="Li ru">Смета</span><span class="Li es">Presupuesto</span></h4>
+        <p><span class="L en on">Detailed, no-obligation estimate.</span><span class="L ru">Подробная смета без обязательств.</span><span class="L es">Presupuesto detallado sin compromiso.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4><span class="Li en on">We Build</span><span class="Li ru">Строим</span><span class="Li es">Construimos</span></h4>
+        <p><span class="L en on">Professional installation, clean site, on schedule.</span><span class="L ru">Профессиональный монтаж, чистая площадка, в срок.</span><span class="L es">Instalación profesional, sitio limpio, en el plazo acordado.</span></p>
+      </div>
     </div>
   </div>
 </section>
@@ -424,7 +726,6 @@
         <h3 class="form-title"><span class="L en on">Request a Free Estimate</span><span class="L ru">Запросить бесплатную оценку</span><span class="L es">Solicitar Presupuesto Gratis</span></h3>
         <form id="leadForm" novalidate>
 
-          <!-- Name row -->
           <div class="form-row">
             <div class="form-group">
               <label><span class="Li en on">First Name</span><span class="Li ru">Имя</span><span class="Li es">Nombre</span> <span class="req">*</span></label>
@@ -437,37 +738,37 @@
             </div>
           </div>
 
-          <!-- Email -->
           <div class="form-group">
             <label>Email <span class="req">*</span></label>
             <input type="email" id="email" maxlength="100" autocomplete="email" placeholder="you@example.com"/>
-            <div class="error-msg" id="emailErr"><span class="L en on">Please enter a valid email</span><span class="L ru">Введите корректный email</span><span class="L es">Ingrese un email válido</span></div>
+            <div class="error-msg" id="emailErr"><span class="L en on">Please enter a valid email</span><span class="Li ru">Введите корректный email</span><span class="Li es">Ingrese un email válido</span></div>
           </div>
 
-          <!-- Phone -->
           <div class="form-group">
             <label><span class="Li en on">Phone</span><span class="Li ru">Телефон</span><span class="Li es">Teléfono</span> <span class="req">*</span></label>
             <input type="tel" id="phone" maxlength="14" autocomplete="tel" placeholder="(512) 000-0000"/>
-            <div class="error-msg" id="phoneErr"><span class="L en on">Please enter a valid US phone number</span><span class="L ru">Введите корректный номер</span><span class="L es">Ingrese un número válido de EE.UU.</span></div>
+            <div class="error-msg" id="phoneErr"><span class="L en on">Please enter a valid US phone number</span><span class="Li ru">Введите корректный номер</span><span class="Li es">Ingrese un número válido de EE.UU.</span></div>
           </div>
 
-          <!-- Address -->
           <div class="form-group">
             <label><span class="Li en on">Project Address</span><span class="Li ru">Адрес объекта</span><span class="Li es">Dirección del Proyecto</span> <span class="req">*</span></label>
             <input type="text" id="address" maxlength="200" autocomplete="street-address" placeholder="123 Main St, Austin, TX"/>
-            <div class="error-msg" id="addressErr"><span class="L en on">Please enter the project address</span><span class="L ru">Введите адрес объекта</span><span class="L es">Ingrese la dirección del proyecto</span></div>
+            <div class="error-msg" id="addressErr"><span class="L en on">Please enter the project address</span><span class="Li ru">Введите адрес объекта</span><span class="Li es">Ingrese la dirección del proyecto</span></div>
           </div>
 
-          <!-- Type + Material -->
           <div class="form-row">
             <div class="form-group">
-              <label><span class="Li en on">Pergola Type</span><span class="Li ru">Тип перголы</span><span class="Li es">Tipo de Pérgola</span></label>
+              <label><span class="Li en on">Project Type</span><span class="Li ru">Тип проекта</span><span class="Li es">Tipo de Proyecto</span></label>
               <select id="pergolaType">
                 <option value="" data-en="— Select —" data-ru="— Выбрать —" data-es="— Seleccionar —"></option>
-                <option value="classic" data-en="Classic" data-ru="Классическая" data-es="Clásica"></option>
-                <option value="attached" data-en="Attached" data-ru="Пристроенная" data-es="Adosada"></option>
-                <option value="louvered" data-en="Louvered" data-ru="Жалюзийная" data-es="Con Persianas"></option>
+                <option value="classic" data-en="Classic Pergola" data-ru="Классическая пергола" data-es="Pérgola Clásica"></option>
+                <option value="attached" data-en="Attached Pergola" data-ru="Пристроенная пергола" data-es="Pérgola Adosada"></option>
+                <option value="louvered" data-en="Louvered Pergola" data-ru="Жалюзийная пергола" data-es="Pérgola con Persianas"></option>
                 <option value="kitchen" data-en="Outdoor Kitchen Combo" data-ru="С летней кухней" data-es="Con Cocina Exterior"></option>
+                <option value="deck_wood" data-en="Wood Deck" data-ru="Деревянная дека" data-es="Deck de Madera"></option>
+                <option value="deck_composite" data-en="Composite Deck" data-ru="Композитная дека" data-es="Deck Compuesto"></option>
+                <option value="deck_pergola" data-en="Deck + Pergola Combo" data-ru="Дека + Пергола" data-es="Deck + Pérgola Combo"></option>
+                <option value="covered_deck" data-en="Covered Deck" data-ru="Дека с навесом" data-es="Deck Cubierto"></option>
                 <option value="unsure" data-en="Not sure yet" data-ru="Не знаю" data-es="No estoy seguro/a"></option>
               </select>
             </div>
@@ -477,13 +778,13 @@
                 <option value="" data-en="— Select —" data-ru="— Выбрать —" data-es="— Seleccionar —"></option>
                 <option value="wood" data-en="Wood" data-ru="Дерево" data-es="Madera"></option>
                 <option value="aluminum" data-en="Aluminum" data-ru="Алюминий" data-es="Aluminio"></option>
+                <option value="composite" data-en="Composite (Trex)" data-ru="Композит (Trex)" data-es="Compuesto (Trex)"></option>
                 <option value="pvc" data-en="PVC / Vinyl" data-ru="ПВХ / Винил" data-es="PVC / Vinilo"></option>
                 <option value="unsure" data-en="Not sure yet" data-ru="Не знаю" data-es="No estoy seguro/a"></option>
               </select>
             </div>
           </div>
 
-          <!-- Size + Timeline -->
           <div class="form-row">
             <div class="form-group">
               <label><span class="Li en on">Approximate Size</span><span class="Li ru">Площадь (кв.фут)</span><span class="Li es">Tamaño aproximado</span></label>
@@ -502,14 +803,13 @@
                 <option value="" data-en="— Select —" data-ru="— Выбрать —" data-es="— Seleccionar —"></option>
                 <option value="asap" data-en="As soon as possible" data-ru="Как можно скорее" data-es="Lo antes posible"></option>
                 <option value="1month" data-en="Within 1 month" data-ru="В течение месяца" data-es="En 1 mes"></option>
-                <option value="3months" data-en="Within 3 months" data-ru="En 3 meses" data-es="En 3 meses"></option>
+                <option value="3months" data-en="Within 3 months" data-ru="В течение 3 месяцев" data-es="En 3 meses"></option>
                 <option value="6months" data-en="Within 6 months" data-ru="В течение 6 месяцев" data-es="En 6 meses"></option>
                 <option value="planning" data-en="Just planning" data-ru="Пока планирую" data-es="Solo estoy planeando"></option>
               </select>
             </div>
           </div>
 
-          <!-- Budget -->
           <div class="form-group">
             <label><span class="Li en on">Approximate Budget</span><span class="Li ru">Примерный бюджет</span><span class="Li es">Presupuesto Aproximado</span></label>
             <select id="budget">
@@ -522,7 +822,6 @@
             </select>
           </div>
 
-          <!-- HOA -->
           <div class="form-group">
             <label><span class="Li en on">HOA Approval Status</span><span class="Li ru">Разрешение HOA</span><span class="Li es">Estado de Aprobación HOA</span></label>
             <select id="hoa">
@@ -534,9 +833,6 @@
             </select>
           </div>
 
-
-
-          <!-- Notes -->
           <div class="form-group">
             <label><span class="Li en on">Additional Notes</span><span class="Li ru">Дополнительно</span><span class="Li es">Notas Adicionales</span></label>
             <textarea id="message" maxlength="1000" placeholder="Any special requirements, questions, or details..."></textarea>
@@ -568,7 +864,7 @@
 
 <footer>
   <p><strong>TexaPergola</strong> · Austin, TX · texapergola@gmail.com</p>
-  <p style="margin-top:8px">© 2025 TexaPergola. All rights reserved.</p>
+  <p style="margin-top:8px">© 2026 TexaPergola. All rights reserved.</p>
 </footer>
 
 <script>
@@ -579,17 +875,14 @@
     document.querySelectorAll('.L').forEach(el => el.classList.toggle('on', el.classList.contains(l)));
     document.querySelectorAll('.Li').forEach(el => el.classList.toggle('on', el.classList.contains(l)));
     document.querySelectorAll('.lang-btn').forEach((btn,i) => btn.classList.toggle('active', ['en','ru','es'][i] === l));
-    // Translate select options
     document.querySelectorAll('select option[data-en]').forEach(opt => {
       opt.textContent = opt.dataset[l] || opt.dataset.en;
     });
     document.documentElement.lang = l;
   }
 
-  // Init on load
   setLang('en');
 
-  // Phone formatter
   document.getElementById('phone').addEventListener('input', function(e) {
     let v = e.target.value.replace(/\D/g,'').substring(0,10);
     if (v.length >= 6) v = '('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
@@ -597,8 +890,6 @@
     e.target.value = v;
   });
 
-
-// Sanitize — убирает опасные символы
   function sanitize(str) {
     return str.replace(/[<>"'`;&|\\\/\(\)\{\}\[\]]/g, '').trim();
   }
@@ -613,28 +904,23 @@
     if (document.querySelector('input[name="_hp"]').value) return;
     let ok = true;
 
-    // Имя — только буквы, дефис, пробел, апостроф, 2-50 символов
     const fn = sanitize(document.getElementById('firstName').value);
     const fnOk = fn.length >= 2 && fn.length <= 50 && /^[a-zA-Zа-яА-ЯёЁ\u00C0-\u024F'\- ]+$/.test(fn);
     showErr('firstName','firstNameErr',!fnOk); if(!fnOk) ok=false;
 
-    // Email — стандартный паттерн, максимум 100 символов
     const em = sanitize(document.getElementById('email').value);
     const emOk = em.length <= 100 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em);
     showErr('email','emailErr',!emOk); if(!emOk) ok=false;
 
-    // Телефон — только цифры, скобки, дефис, пробел, минимум 10 цифр
     const phRaw = document.getElementById('phone').value;
     const ph = phRaw.replace(/\D/g,'');
     showErr('phone','phoneErr', ph.length < 10 || ph.length > 11);
     if(ph.length < 10 || ph.length > 11) ok=false;
 
-    // Адрес — буквы, цифры, запятая, точка, пробел, дефис, максимум 200
     const addr = sanitize(document.getElementById('address').value);
     const addrOk = addr.length >= 5 && addr.length <= 200 && /^[a-zA-Zа-яА-ЯёЁ0-9\s,.\-#]+$/.test(addr);
     showErr('address','addressErr',!addrOk); if(!addrOk) ok=false;
 
-    // Сообщение — любой текст но без HTML/JS, максимум 1000 символов
     const msg = sanitize(document.getElementById('message').value);
 
     if (!ok) return;
@@ -667,7 +953,10 @@
   });
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => { e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'}); });
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+    });
   });
 </script>
 </body>
