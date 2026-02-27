@@ -175,6 +175,33 @@
     .why-point h4 { font-size:17px; font-weight:500; margin-bottom:6px; }
     .why-point p { font-size:14px; color:#777; line-height:1.7; font-weight:300; }
 
+    /* CALC */
+    .calculators { background:var(--cream); padding:56px 32px; }
+    .calculator-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+    .calc-tab { background:transparent; border:2px solid var(--sand); padding:10px 22px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; color:var(--wood); border-radius:4px; cursor:pointer; transition:all 0.2s; }
+    .calc-tab:hover { border-color:var(--terra); color:var(--terra); }
+    .calc-tab.active { background:var(--terra); border-color:var(--terra); color:#fff; }
+    .calculator-card { display:none; background:#fff; border-radius:8px; padding:30px; box-shadow:0 10px 40px rgba(0,0,0,0.05); border:1px solid rgba(196,98,45,0.1); margin-bottom:20px; }
+    .calculator-card.active { display:block; }
+    .calc-card-title { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:24px; color:var(--terra); padding-bottom:10px; border-bottom:2px solid var(--sand); }
+    .calculator-grid { display:grid; grid-template-columns:1.2fr 0.8fr; gap:32px; align-items:start; }
+    .calculator-fields { display:flex; flex-direction:column; gap:14px; }
+    .calc-row { border-bottom:1px dashed var(--sand); padding-bottom:12px; }
+    .calc-row:last-child { border-bottom:none; padding-bottom:0; }
+    .calc-label { display:block; font-size:13px; font-weight:600; color:var(--terra); margin-bottom:6px; letter-spacing:0.3px; }
+    .calc-select { width:100%; padding:8px 10px; border:1.5px solid #E5DDD0; border-radius:4px; background:#FDFAF6; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--dark); outline:none; }
+    .calc-select:focus { border-color:var(--terra); }
+    .calc-slider { width:100%; margin:4px 0; accent-color:var(--terra); }
+    .slider-value { font-size:14px; font-weight:500; color:var(--terra); text-align:right; }
+    .calculator-result { background:var(--sand); padding:24px; border-radius:8px; text-align:center; position:sticky; top:100px; }
+    .result-label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#888; margin-bottom:12px; }
+    .result-price { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--terra); line-height:1.1; margin-bottom:6px; }
+    .result-per-unit { font-size:15px; color:var(--wood); margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid rgba(139,94,60,0.2); }
+    .calculator-disclaimer { font-size:12px; color:#888; text-align:center; max-width:700px; margin:20px auto 0; font-style:italic; }
+    @media (max-width:992px) { .calculator-grid { grid-template-columns:1fr; gap:24px; } .calculator-result { position:static; } }
+    @media (max-width:768px) { .calculator-card { padding:20px; } .result-price { font-size:32px; } .calc-tab { padding:8px 16px; font-size:14px; } }
+
+
     /* PROCESS */
     .process { background:var(--dark); color:#fff; }
     .process .section-title { color:#fff; }
@@ -204,6 +231,26 @@
       background:#FDFAF6; transition:border-color 0.2s; outline:none;
       appearance:none; -webkit-appearance:none;
     }
+    .contact-service-area { margin-top:32px; padding-top:24px; border-top:2px dashed var(--sand); background:rgba(245,236,215,0.3); padding:24px 20px; border-radius:4px; }
+    .contact-service-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--terra); margin-bottom:20px; line-height:1.3; }
+    .contact-area-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:20px; }
+    .contact-area-col { background:rgba(255,255,255,0.5); padding:12px 10px; border-radius:2px; }
+    .contact-area-subtitle { font-size:13px; font-weight:600; color:var(--wood); margin-bottom:10px; letter-spacing:0.3px; text-transform:uppercase; border-bottom:1px solid var(--sand); padding-bottom:5px; }
+    .contact-area-list { list-style:none; padding:0; margin:0; }
+    .contact-area-list li { font-size:12px; color:var(--dark); line-height:1.7; padding-left:14px; position:relative; }
+    .contact-area-list li::before { content:'✓'; position:absolute; left:0; color:var(--terra); font-size:10px; font-weight:700; }
+    .contact-area-note { font-size:13px; color:var(--accent); font-style:italic; margin-top:16px; padding-top:12px; border-top:1px solid var(--sand); text-align:center; font-weight:500; }
+    @media (max-width:992px) { .contact-area-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:768px) { .contact-service-area { margin-top:24px; padding:20px 16px; } .contact-area-grid { grid-template-columns:1fr; gap:12px; } .contact-area-col { padding:10px 12px; } }
+
+    .contact-details-card { background:rgba(245,236,215,0.5); border:1px solid var(--sand); border-radius:4px; padding:20px; margin-bottom:24px; display:flex; flex-direction:column; gap:12px; user-select:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; }
+    .contact-detail-item { display:flex; align-items:center; gap:12px; font-size:15px; pointer-events:none; }
+    .contact-icon { font-size:20px; min-width:32px; text-align:center; pointer-events:none; }
+    .contact-text { color:var(--dark); line-height:1.5; pointer-events:none; }
+    .contact-phone { color:var(--terra); font-weight:500; }
+    .service-note { font-size:14px; color:var(--wood); font-style:italic; margin-bottom:24px; padding-left:8px; border-left:3px solid var(--terra); user-select:none; -webkit-user-select:none; }
+    @media (max-width:480px) { .contact-details-card { padding:16px; } .contact-detail-item { font-size:14px; } .contact-icon { font-size:18px; min-width:28px; } }
+
     .form-group select {
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat:no-repeat; background-position:right 14px center; padding-right:40px;
@@ -329,7 +376,7 @@
       <span>🪵 <span class="Li en on">Pressure‑treated pine, dog‑ear style</span><span class="Li ru">Сосна под давлением, стиль «dog‑ear»</span><span class="Li es">Pino tratado, estilo «oreja de perro»</span></span>
       <span>⏱ <span class="Li en on">4–6 days installation</span><span class="Li ru">4–6 дней монтажа</span><span class="Li es">4–6 días de instalación</span></span>
     </div>
-    <div class="portfolio-price">$3,500 – $6,500</div>
+    <div class="portfolio-price">$4,610 – $7,150</div>
   </div>
 </div>
 
@@ -358,7 +405,7 @@
       <span>🪵 <span class="Li en on">Pressure‑treated pine / cedar</span><span class="Li ru">Сосна под давлением / кедр</span><span class="Li es">Pino tratado / cedro</span></span>
       <span>⏱ <span class="Li en on">3–5 days installation</span><span class="Li ru">3–5 дней монтажа</span><span class="Li es">3–5 días de instalación</span></span>
     </div>
-    <div class="portfolio-price">$5,500 – $8,500</div>
+    <div class="portfolio-price">$5,500 – $7,900</div>
   </div>
 </div>
 
@@ -383,11 +430,11 @@
     </p>
     <p></p>
     <div class="portfolio-specs">
-      <span>📐 <span class="Li en on">120 sq ft</span><span class="Li ru">120 кв. футов</span><span class="Li es">120 pies²</span></span>
+      <span>📐 <span class="Li en on">130 sq ft</span><span class="Li ru">120 кв. футов</span><span class="Li es">120 pies²</span></span>
       <span>🪵 <span class="Li en on">Cedar or pressure‑treated pine</span><span class="Li ru">Кедр или сосна под давлением</span><span class="Li es">Cedro o pino tratado</span></span>
       <span>⏱ <span class="Li en on">2–3 days installation</span><span class="Li ru">2–3 дня монтажа</span><span class="Li es">2–3 días de instalación</span></span>
     </div>
-    <div class="portfolio-price">$4,500 – $7,500</div>
+    <div class="portfolio-price">$4,200 – $5,400</div>
   </div>
 </div>
 
@@ -416,7 +463,7 @@
       <span>🪵 <span class="Li en on">Cedar or pressure‑treated pine</span><span class="Li ru">Кедр или сосна под давлением</span><span class="Li es">Cedro o pino tratado</span></span>
       <span>⏱ <span class="Li en on">3–4 days installation</span><span class="Li ru">3–4 дня монтажа</span><span class="Li es">3–4 días de instalación</span></span>
     </div>
-    <div class="portfolio-price">$5,500 – $9,000</div>
+    <div class="portfolio-price">$6,930 – $9,570</div>
   </div>
 </div>
 
@@ -445,7 +492,7 @@
       <span>✨ <span class="Li en on">Trex / TimberTech, hidden fasteners</span><span class="Li ru">Trex / TimberTech, скрытые крепления</span><span class="Li es">Trex / TimberTech, sujetadores ocultos</span></span>
       <span>⏱ <span class="Li en on">4–6 days installation</span><span class="Li ru">4–6 дней монтажа</span><span class="Li es">4–6 días de instalación</span></span>
     </div>
-    <div class="portfolio-price">$9,000 – $14,000</div>
+    <div class="portfolio-price">$8,750 – $12,500</div>
   </div>
 </div>
 
@@ -474,11 +521,10 @@
       <span>✨ <span class="Li en on">Composite deck + cedar pergola</span><span class="Li ru">Композитная терраса + кедровая пергола</span><span class="Li es">Deck compuesto + pérgola de cedro</span></span>
       <span>⏱ <span class="Li en on">7–9 days installation</span><span class="Li ru">7–9 дней монтажа</span><span class="Li es">7–9 días de instalación</span></span>
     </div>
-    <div class="portfolio-price">$15,000 – $22,000</div>
+    <div class="portfolio-price">$14,100 – $19,460</div>
   </div>
 </div>
 </div>
-
     </div>
 </section>
 
@@ -669,7 +715,7 @@
           <div class="deck-price-range">
             <div>
               <div class="price-label"><span class="Li en on">Typical Range</span><span class="Li ru">Обычная стоимость</span><span class="Li es">Rango Típico</span></div>
-              <div class="price-val">$18–$25 / sq ft</div>
+              <div class="price-val">$18–$38 / sq ft</div>
             </div>
             <a href="#contact" class="btn-primary" style="padding:12px 24px;font-size:14px">
               <span class="Li en on">Get Estimate</span><span class="Li ru">Оценка</span><span class="Li es">Presupuesto</span>
@@ -736,7 +782,7 @@
         <tbody>
           <tr>
             <td><span class="Li en on">Upfront Cost</span><span class="Li ru">Начальная стоимость</span><span class="Li es">Costo Inicial</span></td>
-            <td><span class="Li en on">$18–$25/sq ft</span><span class="Li ru">$18–$25/кв.фут</span><span class="Li es">$18–$25/pie²</span></td>
+            <td><span class="Li en on">$18–$38/sq ft</span><span class="Li ru">$18–$38/кв.фут</span><span class="Li es">$18–$38/pie²</span></td>
             <td><span class="Li en on">$30–$45/sq ft</span><span class="Li ru">$30–$45/кв.фут</span><span class="Li es">$30–$45/pie²</span></td>
           </tr>
           <tr>
@@ -781,6 +827,332 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+<!-- PRICE CALCULATORS -->
+<section class="calculators" id="calculators">
+  <div class="container">
+    <div class="section-tag">
+      <span class="Li en on">Price Estimators</span>
+      <span class="Li ru">Калькуляторы цены</span>
+      <span class="Li es">Calculadoras de Precio</span>
+    </div>
+
+    <h2 class="section-title">
+      <span class="L en on">How Much Will Your Project Cost?</span>
+      <span class="L ru">Сколько будет стоить ваш проект?</span>
+      <span class="L es">¿Cuánto costará tu proyecto?</span>
+    </h2>
+
+    <p class="section-sub" style="margin-bottom:40px;">
+      <span class="L en on">Choose your project type for a rough estimate. Final price depends on your specific site.</span>
+      <span class="L ru">Выберите тип проекта для примерной оценки. Точная цена зависит от вашего участка.</span>
+      <span class="L es">Elija su tipo de proyecto para una estimación aproximada. El precio final depende de su sitio.</span>
+    </p>
+
+    <!-- TABS для выбора типа калькулятора -->
+    <div class="calculator-tabs">
+      <button class="calc-tab active" data-calc="deck">
+        <span class="Li en on">Deck</span>
+        <span class="Li ru">Терраса</span>
+        <span class="Li es">Deck</span>
+      </button>
+      <button class="calc-tab" data-calc="fence">
+        <span class="Li en on">Fence</span>
+        <span class="Li ru">Забор</span>
+        <span class="Li es">Cerca</span>
+      </button>
+      <button class="calc-tab" data-calc="pergola">
+        <span class="Li en on">Pergola</span>
+        <span class="Li ru">Пергола</span>
+        <span class="Li es">Pérgola</span>
+      </button>
+    </div>
+
+    <!-- DECK CALCULATOR -->
+    <div class="calculator-card active" id="calc-deck">
+      <div class="calculator-grid">
+        <div class="calculator-fields">
+          <h3 class="calc-card-title">
+            <span class="Li en on">Deck Calculator</span>
+            <span class="Li ru">Калькулятор террасы</span>
+            <span class="Li es">Calculadora de Deck</span>
+          </h3>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Material</span>
+              <span class="Li ru">Материал</span>
+              <span class="Li es">Material</span>
+            </label>
+            <select id="deckMaterial" class="calc-select">
+              <option value="22" data-min="22" data-max="32" data-en="Pressure-treated pine ($22-32/sq ft)" data-ru="Сосна обработанная ($22-32/кв.фут)" data-es="Pino tratado ($22-32/pie²)">Pressure-treated pine ($22-32/sq ft)</option>
+              <option value="32" data-min="32" data-max="42" data-en="Cedar ($32-42/sq ft)" data-ru="Кедр ($32-42/кв.фут)" data-es="Cedro ($32-42/pie²)">Cedar ($32-42/sq ft)</option>
+              <option value="35" data-min="35" data-max="50" data-en="Composite - basic ($35-50/sq ft)" data-ru="Композит базовый ($35-50/кв.фут)" data-es="Compuesto básico ($35-50/pie²)">Composite - basic ($35-50/sq ft)</option>
+            </select>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Deck Size (sq ft)</span>
+              <span class="Li ru">Размер террасы (кв. футы)</span>
+              <span class="Li es">Tamaño (pies cuadrados)</span>
+            </label>
+            <input type="range" id="deckSize" min="100" max="800" value="150" step="10" class="calc-slider">
+            <div class="slider-value"><span id="deckSizeValue">150</span> <span class="Li en on">sq ft</span><span class="Li ru">кв.фут</span><span class="Li es">pie²</span></div>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Height</span>
+              <span class="Li ru">Высота</span>
+              <span class="Li es">Altura</span>
+            </label>
+            <select id="deckHeight" class="calc-select">
+              <option value="1.0" data-en="Ground level" data-ru="По земле" data-es="Nivel del suelo">Ground level</option>
+              <option value="1.15" data-en="Elevated (under 4ft) +15%" data-ru="Приподнятая (до 4 футов) +15%" data-es="Elevada (menos de 4 pies) +15%">Elevated (under 4ft) +15%</option>
+              <option value="1.3" data-en="Elevated (over 4ft) +30%" data-ru="Высокая (более 4 футов) +30%" data-es="Elevada (más de 4 pies) +30%">Elevated (over 4ft) +30%</option>
+            </select>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Railing</span>
+              <span class="Li ru">Перила</span>
+              <span class="Li es">Barandales</span>
+            </label>
+            <select id="deckRailing" class="calc-select">
+              <option value="0" data-en="No railing" data-ru="Без перил" data-es="Sin barandales">No railing</option>
+              <option value="15" data-en="Wood railing (+$15/sq ft)" data-ru="Деревянные (+$15/кв.фут)" data-es="Madera (+$15/pie²)">Wood railing (+$15/sq ft)</option>
+              <option value="25" data-en="Metal railing (+$25/sq ft)" data-ru="Металлические (+$25/кв.фут)" data-es="Metal (+$25/pie²)">Metal railing (+$25/sq ft)</option>
+            </select>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Stairs</span>
+              <span class="Li ru">Лестница</span>
+              <span class="Li es">Escaleras</span>
+            </label>
+            <select id="deckStairs" class="calc-select">
+              <option value="0" data-en="No stairs" data-ru="Без лестницы" data-es="Sin escaleras">No stairs</option>
+              <option value="3" data-en="3-5 steps (low deck)" data-ru="3-5 ступеней (низкая терраса)" data-es="3-5 escalones (deck bajo)">3-5 steps (low deck)</option>
+              <option value="6" data-en="6-8 steps (standard)" data-ru="6-8 ступеней (стандарт)" data-es="6-8 escalones (estándar)">6-8 steps (standard)</option>
+              <option value="9" data-en="9-12 steps (high deck)" data-ru="9-12 ступеней (высокая)" data-es="9-12 escalones (deck alto)">9-12 steps (high deck)</option>
+              <option value="15" data-en="13-18 steps (very high / two stories)" data-ru="13-18 ступеней (очень высокая / два этажа)" data-es="13-18 escalones (muy alto / dos pisos)">13-18 steps (very high)</option>
+              <option value="20" data-en="19-25+ steps (multi-level with landings)" data-ru="19-25+ ступеней (многоуровневая с площадками)" data-es="19-25+ escalones (multi-nivel con descansos)">19-25+ steps (multi-level)</option>
+            </select>
+          </div></div>
+
+        <div class="calculator-result">
+          <div class="result-label">
+            <span class="Li en on">Estimated total</span>
+            <span class="Li ru">Примерная стоимость</span>
+            <span class="Li es">Total estimado</span>
+          </div>
+          <div class="result-price" id="deckTotal">$2,700 – $6,800</div>
+          <div class="result-per-unit" id="deckPerUnit">$18 – $45 <span class="Li en on">per sq ft</span><span class="Li ru">за кв.фут</span><span class="Li es">por pie²</span></div>
+          <a href="#contact" class="btn-primary" style="margin-top:20px;">
+            <span class="Li en on">Get exact quote →</span>
+            <span class="Li ru">Получить точную смету →</span>
+            <span class="Li es">Obtener presupuesto exacto →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+     <!-- FENCE CALCULATOR -->
+<div class="calculator-card" id="calc-fence">
+  <div class="calculator-grid">
+    <div class="calculator-fields">
+      <h3 class="calc-card-title">
+        <span class="Li en on">Fence Calculator</span>
+        <span class="Li ru">Калькулятор забора</span>
+        <span class="Li es">Calculadora de Cerca</span>
+      </h3>
+
+      <!-- Material -->
+      <div class="calc-row">
+        <label class="calc-label">
+          <span class="Li en on">Material</span>
+          <span class="Li ru">Материал</span>
+          <span class="Li es">Material</span>
+        </label>
+        <select id="fenceMaterial" class="calc-select">
+          <option value="22" data-min="22" data-max="35" data-en="Pressure-treated pine ($22-35/ft)" data-ru="Сосна обработанная ($22-35/фут)" data-es="Pino tratado ($22-35/pie)">Pressure-treated pine ($22-35/ft)</option>
+          <option value="32" data-min="32" data-max="48" data-en="Cedar ($32-48/ft)" data-ru="Кедр ($32-48/фут)" data-es="Cedro ($32-48/pie)">Cedar ($32-48/ft)</option>
+          <option value="18" data-min="18" data-max="28" data-en="Chain link ($18-28/ft)" data-ru="Рабица ($18-28/фут)" data-es="Eslabón ($18-28/pie)">Chain link ($18-28/ft)</option>
+          <option value="32" data-min="32" data-max="48" data-en="Vinyl/PVC ($32-48/ft)" data-ru="Винил/ПВХ ($32-48/фут)" data-es="Vinilo/PVC ($32-48/pie)">Vinyl/PVC ($32-48/ft)</option>
+        </select>
+      </div>
+
+      <!-- Length (слайдер) -->
+      <div class="calc-row">
+        <label class="calc-label">
+          <span class="Li en on">Length (feet)</span>
+          <span class="Li ru">Длина (футы)</span>
+          <span class="Li es">Longitud (pies)</span>
+        </label>
+        <input type="range" id="fenceLength" min="50" max="800" value="110" step="10" class="calc-slider">
+        <div class="slider-value"><span id="fenceLengthValue">150</span> <span class="Li en on">ft</span><span class="Li ru">фут</span><span class="Li es">pies</span></div>
+      </div>
+
+      <!-- Style -->
+      <div class="calc-row">
+        <label class="calc-label">
+          <span class="Li en on">Style</span>
+          <span class="Li ru">Стиль</span>
+          <span class="Li es">Estilo</span>
+        </label>
+        <select id="fenceStyle" class="calc-select">
+          <option value="1.0" data-en="Standard dog-ear" data-ru="Стандартный" data-es="Estándar">Standard dog-ear</option>
+          <option value="1.25" data-en="Shadowbox / board on board (+25%)" data-ru="Шахматка (+25%)" data-es="Sombra (+25%)">Shadowbox / board on board (+25%)</option>
+          <option value="1.35" data-en="Horizontal boards (+35%)" data-ru="Горизонтальные (+35%)" data-es="Horizontales (+35%)">Horizontal boards (+35%)</option>
+          <option value="1.15" data-en="Lattice top (+15%)" data-ru="С решеткой (+15%)" data-es="Celosía (+15%)">Lattice top (+15%)</option>
+        </select>
+      </div>
+
+      <!-- Work Type -->
+      <div class="calc-row">
+        <label class="calc-label">
+          <span class="Li en on">Work Type</span>
+          <span class="Li ru">Тип работ</span>
+          <span class="Li es">Tipo de trabajo</span>
+        </label>
+        <select id="fenceWorkType" class="calc-select">
+          <option value="1.0" data-en="New install" data-ru="С нуля" data-es="Nuevo">New install</option>
+          <option value="1.3" data-en="Replace with demolition (+30%)" data-ru="Замена с демонтажем (+30%)" data-es="Reemplazo con demolición (+30%)">Replace with demolition (+30%)</option>
+        </select>
+      </div>
+
+      <!-- Gates -->
+      <div class="calc-row">
+        <label class="calc-label">
+          <span class="Li en on">Gates</span>
+          <span class="Li ru">Калитки</span>
+          <span class="Li es">Puertas</span>
+        </label>
+        <select id="fenceGates" class="calc-select">
+          <option value="0" data-en="No gates" data-ru="Без калиток" data-es="Sin puertas">No gates</option>
+          <option value="1" data-en="1 gate (+$350)" data-ru="1 калитка (+$350)" data-es="1 puerta (+$350)">1 gate (+$350)</option>
+          <option value="2" data-en="2 gates (+$650)" data-ru="2 калитки (+$650)" data-es="2 puertas (+$650)">2 gates (+$650)</option>
+        </select>
+      </div>
+
+      <!-- Terrain -->
+      <div class="calc-row">
+        <label class="calc-label">
+          <span class="Li en on">Terrain</span>
+          <span class="Li ru">Рельеф</span>
+          <span class="Li es">Terreno</span>
+        </label>
+        <select id="fenceTerrain" class="calc-select">
+          <option value="1.0" data-en="Flat / easy" data-ru="Ровный" data-es="Plano">Flat / easy</option>
+          <option value="1.2" data-en="Moderate slope (+20%)" data-ru="Небольшой уклон (+20%)" data-es="Pendiente moderada (+20%)">Moderate slope (+20%)</option>
+          <option value="1.4" data-en="Steep / rocky (+40%)" data-ru="Крутой / скалистый (+40%)" data-es="Empinado / rocoso (+40%)">Steep / rocky (+40%)</option>
+        </select>
+      </div>
+
+    </div> <!-- закрытие calculator-fields -->
+
+    <div class="calculator-result">
+      <div class="result-label">
+        <span class="Li en on">Estimated total</span>
+        <span class="Li ru">Примерная стоимость</span>
+        <span class="Li es">Total estimado</span>
+      </div>
+      <div class="result-price" id="fenceTotal">$1,200 – $4,200</div>
+      <div class="result-per-unit" id="fencePerUnit">$12 – $42 <span class="Li en on">per ft</span><span class="Li ru">за фут</span><span class="Li es">por pie</span></div>
+      <a href="#contact" class="btn-primary" style="margin-top:20px;">
+        <span class="Li en on">Get exact quote →</span>
+        <span class="Li ru">Получить точную смету →</span>
+        <span class="Li es">Obtener presupuesto exacto →</span>
+      </a>
+    </div>
+  </div> <!-- закрытие calculator-grid -->
+</div> <!-- закрытие calculator-card -->
+
+    <!-- PERGOLA CALCULATOR -->
+    <div class="calculator-card" id="calc-pergola">
+      <div class="calculator-grid">
+        <div class="calculator-fields">
+          <h3 class="calc-card-title">
+            <span class="Li en on">Pergola Calculator</span>
+            <span class="Li ru">Калькулятор перголы</span>
+            <span class="Li es">Calculadora de Pérgola</span>
+          </h3>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Material</span>
+              <span class="Li ru">Материал</span>
+              <span class="Li es">Material</span>
+            </label>
+            <select id="pergolaMaterial" class="calc-select">
+              <option value="32" data-min="32" data-max="42" data-en="Pressure-treated pine ($32-42/sq ft)" data-ru="Сосна обработанная ($32-42/кв.фут)" data-es="Pino tratado ($32-42/pie²)">Pressure-treated pine ($32-42/sq ft)</option>
+              <option value="42" data-min="42" data-max="58" data-en="Cedar ($42-58/sq ft)" data-ru="Кедр ($42-58/кв.фут)" data-es="Cedro ($42-58/pie²)">Cedar ($42-58/sq ft)</option>
+              <option value="38" data-min="38" data-max="50" data-en="Vinyl/PVC ($38-50/sq ft)" data-ru="Винил/ПВХ ($38-50/кв.фут)" data-es="Vinilo/PVC ($38-50/pie²)">Vinyl/PVC ($38-50/sq ft)</option>
+            </select>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Pergola Size (sq ft)</span>
+              <span class="Li ru">Размер (кв. футы)</span>
+              <span class="Li es">Tamaño (pies cuadrados)</span>
+            </label>
+            <input type="range" id="pergolaSize" min="80" max="400" value="160" step="10" class="calc-slider">
+            <div class="slider-value"><span id="pergolaSizeValue">160</span> <span class="Li en on">sq ft</span><span class="Li ru">кв.фут</span><span class="Li es">pie²</span></div>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Type</span>
+              <span class="Li ru">Тип</span>
+              <span class="Li es">Tipo</span>
+            </label>
+            <select id="pergolaType" class="calc-select">
+              <option value="1.0" data-en="Freestanding" data-ru="Отдельно стоящая" data-es="Independiente">Freestanding</option>
+              <option value="1.1" data-en="Attached to house (+10%)" data-ru="Пристроенная к дому (+10%)" data-es="Adosada a la casa (+10%)">Attached to house (+10%)</option>
+            </select>
+          </div>
+
+          <div class="calc-row">
+            <label class="calc-label">
+              <span class="Li en on">Roof Style</span>
+              <span class="Li ru">Тип крыши</span>
+              <span class="Li es">Estilo de techo</span>
+            </label>
+            <select id="pergolaRoof" class="calc-select">
+              <option value="1.0" data-en="Open lattice / classic" data-ru="Открытая решетка" data-es="Enrejado abierto">Open lattice / classic</option>
+              <option value="1.25" data-en="Solid roof (+25%)" data-ru="Сплошная крыша (+25%)" data-es="Techo sólido (+25%)">Solid roof (+25%)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calculator-result">
+          <div class="result-label">
+            <span class="Li en on">Estimated total</span>
+            <span class="Li ru">Примерная стоимость</span>
+            <span class="Li es">Total estimado</span>
+          </div>
+          <div class="result-price" id="pergolaTotal">$2,800 – $7,400</div>
+          <div class="result-per-unit" id="pergolaPerUnit">$28 – $53 <span class="Li en on">per sq ft</span><span class="Li ru">за кв.фут</span><span class="Li es">por pie²</span></div>
+          <a href="#contact" class="btn-primary" style="margin-top:20px;">
+            <span class="Li en on">Get exact quote →</span>
+            <span class="Li ru">Получить точную смету →</span>
+            <span class="Li es">Obtener presupuesto exacto →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="calculator-disclaimer">
+      <span class="L en on">⚠️ These are rough estimates based on typical projects. Final price depends on site conditions and exact specifications.</span>
+      <span class="L ru">⚠️ Это примерные оценки на основе типовых проектов. Точная цена зависит от условий участка и точных характеристик.</span>
+      <span class="L es">⚠️ Estos son estimados aproximados basados en proyectos típicos. El precio final depende de las condiciones del sitio y especificaciones exactas.</span>
+    </p>
   </div>
 </section>
 
@@ -865,15 +1237,116 @@
     <div class="section-tag"><span class="Li en on">Get Started</span><span class="Li ru">Начать</span><span class="Li es">Comenzar</span></div>
     <h2 class="section-title"><span class="L en on">Get Your Free Estimate</span><span class="L ru">Бесплатная оценка проекта</span><span class="L es">Obtenga su Presupuesto Gratis</span></h2>
     <p class="section-sub"><span class="L en on">Tell us about your project. We'll get back to you within one business day.</span><span class="L ru">Расскажите о вашем проекте. Свяжемся в течение одного рабочего дня.</span><span class="L es">Cuéntenos sobre su proyecto. Le responderemos en un día hábil.</span></p>
+
     <div class="contact-grid">
+      <!-- ЛЕВАЯ КОЛОНКА: информация и сервис зона -->
       <div class="contact-info">
-        <h3><span class="L en on">Let's talk about your backyard</span><span class="L ru">Поговорим о вашем дворе</span><span class="L es">Hablemos de su patio</span></h3>
-        <p><span class="L en on">Clear vision or rough idea — we'll find the best solution for your space and budget.</span><span class="L ru">Есть идея или только общее желание — поможем найти лучшее решение.</span><span class="L es">Visión clara o idea general — le ayudaremos a encontrar la mejor solución.</span></p>
-        <div class="contact-detail"><span>📧</span><span>texapergola@gmail.com</span></div>
-        <div class="contact-detail"><span>📍</span><span>Austin, TX &amp; surrounding areas</span></div>
-        <div class="contact-detail"><span>🕐</span><span><span class="Li en on">Response within 24 hours</span><span class="Li ru">Ответ в течение 24 часов</span><span class="Li es">Respuesta en 24 horas</span></span></div>
+        <h3>
+          <span class="L en on">Let's talk about your backyard</span>
+          <span class="L ru">Поговорим о вашем дворе</span>
+          <span class="L es">Hablemos de su patio</span>
+        </h3>
+        <p>
+          <span class="L en on">Clear vision or rough idea — we'll find the best solution for your space and budget.</span>
+          <span class="L ru">Есть идея или только общее желание — поможем найти лучшее решение.</span>
+          <span class="L es">Visión clara o idea general — le ayudaremos a encontrar la mejor solución.</span>
+        </p>
+
+        <!-- Контактные данные -->
+        <!-- Контактные данные в одной общей рамочке (защищенные) -->
+        <div class="contact-details-card">
+          <div class="contact-detail-item">
+            <span class="contact-icon">📧</span>
+            <span class="contact-text contact-email">texapergola<!-- защита -->@<!-- защита -->gmail.com</span>
+          </div>
+
+          <div class="contact-detail-item">
+            <span class="contact-icon">📞</span>
+            <span class="contact-text contact-phone">(512) 850-1038</span>
+          </div>
+
+          <div class="contact-detail-item">
+            <span class="contact-icon">🕐</span>
+            <span class="contact-text"><span class="Li en on">Response within 24 hours</span><span class="Li ru">Ответ в течение 24 часов</span><span class="Li es">Respuesta en 24 horas</span></span>
+          </div>
+        </div>
+
+        <!-- SERVICE AREA В ЛЕВОЙ КОЛОНКЕ -->
+        <div class="contact-service-area">
+          <h4 class="contact-service-title">
+            <span class="Li en on">We serve all of Austin & surrounding areas:</span>
+            <span class="Li ru">Работаем по всему Остину и пригородам:</span>
+            <span class="Li es">Servimos a Austin y áreas circundantes:</span>
+          </h4>
+
+          <div class="contact-area-grid">
+            <!-- Колонка 1: Центр и Юг -->
+            <div class="contact-area-col">
+              <h5 class="contact-area-subtitle">
+                <span class="Li en on">Central & South</span>
+                <span class="Li ru">Центр и Юг</span>
+                <span class="Li es">Centro y Sur</span>
+              </h5>
+              <ul class="contact-area-list">
+                <li>Downtown Austin</li>
+                <li>South Congress (SoCo)</li>
+                <li>Zilker / Barton Hills</li>
+                <li>Bouldin Creek</li>
+                <li>Travis Heights</li>
+                <li>Sunset Valley</li>
+                <li>Circle C Ranch</li>
+                <li>Buda / Kyle</li>
+              </ul>
+            </div>
+
+            <!-- Колонка 2: Запад и Север -->
+            <div class="contact-area-col">
+              <h5 class="contact-area-subtitle">
+                <span class="Li en on">West & North</span>
+                <span class="Li ru">Запад и Север</span>
+                <span class="Li es">Oeste y Norte</span>
+              </h5>
+              <ul class="contact-area-list">
+                <li>West Lake Hills</li>
+                <li>Bee Cave / Lakeway</li>
+                <li>Steiner Ranch</li>
+                <li>Cedar Park / Leander</li>
+                <li>Round Rock</li>
+                <li>Georgetown</li>
+                <li>Pflugerville</li>
+                <li>Dripping Springs</li>
+              </ul>
+            </div>
+
+            <!-- Колонка 3: Восток и пригороды -->
+            <div class="contact-area-col">
+              <h5 class="contact-area-subtitle">
+                <span class="Li en on">East & Beyond</span>
+                <span class="Li ru">Восток и далее</span>
+                <span class="Li es">Este y más allá</span>
+              </h5>
+              <ul class="contact-area-list">
+                <li>East Austin</li>
+                <li>Mueller / Cherrywood</li>
+                <li>Del Valle</li>
+                <li>Bastrop</li>
+                <li>Elgin</li>
+                <li>Manor</li>
+                <li>Lockhart</li>
+                <li>San Marcos</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="contact-area-note">
+            <span class="L en on">✺ Don't see your area? We travel throughout Central Texas — just ask!</span>
+            <span class="L ru">✺ Не нашли свой район? Работаем по всему Центральному Техасу — просто спросите!</span>
+            <span class="L es">✺ ¿No ve su área? Viajamos por todo el Centro de Texas — ¡pregunte!</span>
+          </p>
+        </div>
       </div>
 
+      <!-- ПРАВАЯ КОЛОНКА: форма (ПОЛНОСТЬЮ ОРИГИНАЛЬНАЯ) -->
       <div class="form-wrap">
         <h3 class="form-title"><span class="L en on">Request a Free Estimate</span><span class="L ru">Запросить бесплатную оценку</span><span class="L es">Solicitar Presupuesto Gratis</span></h3>
         <form id="leadForm" novalidate>
@@ -915,8 +1388,6 @@
                 <option value="" data-en="— Select —" data-ru="— Выбрать —" data-es="— Seleccionar —"></option>
                 <option value="classic" data-en="Classic Pergola" data-ru="Классическая пергола" data-es="Pérgola Clásica"></option>
                 <option value="attached" data-en="Attached Pergola" data-ru="Пристроенная пергола" data-es="Pérgola Adosada"></option>
-<!--                <option value="louvered" data-en="Louvered Pergola" data-ru="Жалюзийная пергола" data-es="Pérgola con Persianas"></option>-->
-<!--                <option value="kitchen" data-en="Outdoor Kitchen Combo" data-ru="С летней кухней" data-es="Con Cocina Exterior"></option>-->
                 <option value="deck_wood" data-en="Wood Deck" data-ru="Деревянная Терраса" data-es="Deck de Madera"></option>
                 <option value="deck_composite" data-en="Composite Deck" data-ru="Композитная Терраса" data-es="Deck Compuesto"></option>
                 <option value="deck_pergola" data-en="Deck + Pergola Combo" data-ru="Терраса + Пергола" data-es="Deck + Pérgola Combo"></option>
@@ -929,9 +1400,7 @@
               <select id="material">
                 <option value="" data-en="— Select —" data-ru="— Выбрать —" data-es="— Seleccionar —"></option>
                 <option value="wood" data-en="Wood" data-ru="Дерево" data-es="Madera"></option>
-<!--                <option value="aluminum" data-en="Aluminum" data-ru="Алюминий" data-es="Aluminio"></option>-->
                 <option value="composite" data-en="Composite (Trex)" data-ru="Композит (Trex)" data-es="Compuesto (Trex)"></option>
-<!--                <option value="pvc" data-en="PVC / Vinyl" data-ru="ПВХ / Винил" data-es="PVC / Vinilo"></option>-->
                 <option value="unsure" data-en="Not sure yet" data-ru="Не знаю" data-es="No estoy seguro/a"></option>
               </select>
             </div>
@@ -1230,6 +1699,152 @@
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   });
+
+  // Tab switching
+document.querySelectorAll('.calc-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.calculator-card').forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+    const calcId = 'calc-' + this.dataset.calc;
+    document.getElementById(calcId).classList.add('active');
+  });
+});
+
+// Fence Calculator
+function updateFencePrice() {
+  const material = document.getElementById('fenceMaterial');
+  const materialMin = parseFloat(material.options[material.selectedIndex].dataset.min);
+  const materialMax = parseFloat(material.options[material.selectedIndex].dataset.max);
+  const style = parseFloat(document.getElementById('fenceStyle').value);
+  const workType = parseFloat(document.getElementById('fenceWorkType').value);
+  const gates = parseInt(document.getElementById('fenceGates').value);
+  const terrain = parseFloat(document.getElementById('fenceTerrain').value);
+  const length = parseInt(document.getElementById('fenceLength').value);
+
+  let minPerFt = materialMin * style * workType * terrain;
+  let maxPerFt = materialMax * style * workType * terrain;
+
+  let totalMin = minPerFt * length;
+  let totalMax = maxPerFt * length;
+
+  // Add gates
+  if (gates === 1) {
+    totalMin += 350;
+    totalMax += 450;
+  } else if (gates === 2) {
+    totalMin += 650;
+    totalMax += 850;
+  }
+
+  document.getElementById('fenceTotal').innerHTML = `$${Math.round(totalMin).toLocaleString()} – $${Math.round(totalMax).toLocaleString()}`;
+  document.getElementById('fencePerUnit').innerHTML = `$${Math.round(minPerFt)} – $${Math.round(maxPerFt)} per ft`;
+  document.getElementById('fenceLengthValue').innerHTML = length;
+}
+
+// Deck Calculator
+function updateDeckPrice() {
+  const material = document.getElementById('deckMaterial');
+  const baseMin = parseFloat(material.options[material.selectedIndex].dataset.min);
+  const baseMax = parseFloat(material.options[material.selectedIndex].dataset.max);
+  const size = parseInt(document.getElementById('deckSize').value);
+  const height = parseFloat(document.getElementById('deckHeight').value);
+  const railing = parseInt(document.getElementById('deckRailing').value);
+  const stairs = parseInt(document.getElementById('deckStairs').value);
+
+  // Базовый расчет за квадратный фут
+  let minPerSqFt = baseMin * height;
+  let maxPerSqFt = baseMax * height;
+
+  // Общая стоимость только материал + высота
+  let totalMin = minPerSqFt * size;
+  let totalMax = maxPerSqFt * size;
+
+  // Добавляем перила (если выбраны)
+  if (railing > 0) {
+    totalMin += railing * size;
+    totalMax += railing * size * 1.2;
+  }
+
+  // Stairs pricing
+  const stairsValue = parseInt(document.getElementById('deckStairs').value);
+  let stairsCost = 0;
+
+  if (stairsValue === 3) { // 3-5 steps
+    stairsCost = 450;
+  } else if (stairsValue === 6) { // 6-8 steps
+    stairsCost = 800;
+  } else if (stairsValue === 9) { // 9-12 steps
+    stairsCost = 1200;
+  } else if (stairsValue === 15) { // 13-18 steps
+    stairsCost = 1800;
+  } else if (stairsValue === 20) { // 19-25+ steps
+    stairsCost = 2500;
+  }
+
+  totalMin += stairsCost;
+  totalMax += stairsCost * 1.2; // +20% for max scenario
+
+  // Вывод результатов
+  document.getElementById('deckTotal').innerHTML = `$${Math.round(totalMin).toLocaleString()} – $${Math.round(totalMax).toLocaleString()}`;
+  document.getElementById('deckPerUnit').innerHTML = `$${Math.round(minPerSqFt)} – $${Math.round(maxPerSqFt)} per sq ft`;
+  document.getElementById('deckSizeValue').innerHTML = size;
+}
+
+// Pergola Calculator
+function updatePergolaPrice() {
+  const material = document.getElementById('pergolaMaterial');
+  const baseMin = parseFloat(material.options[material.selectedIndex].dataset.min);
+  const baseMax = parseFloat(material.options[material.selectedIndex].dataset.max);
+  const size = parseInt(document.getElementById('pergolaSize').value);
+  const type = parseFloat(document.getElementById('pergolaType').value);
+  const roof = parseFloat(document.getElementById('pergolaRoof').value);
+
+  let minPerSqFt = baseMin * type * roof;
+  let maxPerSqFt = baseMax * type * roof;
+
+  let totalMin = minPerSqFt * size;
+  let totalMax = maxPerSqFt * size;
+
+  document.getElementById('pergolaTotal').innerHTML = `$${Math.round(totalMin).toLocaleString()} – $${Math.round(totalMax).toLocaleString()}`;
+  document.getElementById('pergolaPerUnit').innerHTML = `$${Math.round(minPerSqFt)} – $${Math.round(maxPerSqFt)} per sq ft`;
+  document.getElementById('pergolaSizeValue').innerHTML = size;
+}
+
+// Add event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Fence
+  ['fenceMaterial','fenceStyle','fenceWorkType','fenceGates','fenceTerrain','fenceLength'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('change', updateFencePrice);
+      el.addEventListener('input', updateFencePrice);
+    }
+  });
+
+  // Deck
+  ['deckMaterial','deckSize','deckHeight','deckRailing','deckStairs'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('change', updateDeckPrice);
+      el.addEventListener('input', updateDeckPrice);
+    }
+  });
+
+  // Pergola event listeners
+  ['pergolaMaterial', 'pergolaSize', 'pergolaType', 'pergolaRoof'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('change', updatePergolaPrice);
+      el.addEventListener('input', updatePergolaPrice);
+    }
+  });
+
+  // Initial updates
+  updateFencePrice();
+  updateDeckPrice();
+  updatePergolaPrice();
+});
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
